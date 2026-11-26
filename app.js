@@ -245,6 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProductModal();
   initWhyChooseTabs();
   initVirtualOfficeWithOversizedCursor();
+  initAuroraBloomBgFlip();
   initFaqAccordion();
   initScrollReveal();
 });
@@ -504,17 +505,14 @@ function initVirtualOfficeWithOversizedCursor() {
     currentKey = tabKey;
 
     if (viaOversizedCursor && cursorEl) {
-      // 1. Glide oversized cursor to target button center
       cursorEl.style.left = mod.cursorPos.left;
       cursorEl.style.top = mod.cursorPos.top;
 
-      // 2. Asymmetric 1:2 tap compress/expand on tip (21% 14%) & click ignites beat
       setTimeout(() => {
         cursorEl.classList.add('is-tapping');
         const targetNav = document.getElementById(`saas-nav-${tabKey}`);
         if (targetNav) targetNav.classList.add('is-cursor-pressed');
 
-        // Rack-focus blur-cut ignited same-frame by the click
         if (stageEl) stageEl.classList.add('is-pulling-focus');
 
         setTimeout(() => {
@@ -523,7 +521,6 @@ function initVirtualOfficeWithOversizedCursor() {
           commitModuleContent(tabKey, mod);
           if (stageEl) stageEl.classList.remove('is-pulling-focus');
 
-          // 3. Drift cursor aside during reading beat so it never sits frozen over text
           setTimeout(() => {
             if (cursorEl && isTourActive) {
               cursorEl.style.left = '78%';
@@ -577,7 +574,6 @@ function initVirtualOfficeWithOversizedCursor() {
     if (tourBtn) tourBtn.classList.add('is-running');
     if (tourLabel) tourLabel.textContent = 'Recorrido Guiado: Activo';
 
-    // Physical entry from off-screen bottom (top: 118% -> resting spot)
     if (cursorEl) {
       cursorEl.style.left = '78%';
       cursorEl.style.top = '22%';
@@ -595,7 +591,6 @@ function initVirtualOfficeWithOversizedCursor() {
     tourInterval = null;
     if (tourBtn) tourBtn.classList.remove('is-running');
     if (tourLabel) tourLabel.textContent = 'Iniciar Recorrido con Cursor';
-    // Physical exit off-screen below (never opacity fade in place)
     if (cursorEl) {
       cursorEl.style.left = '52%';
       cursorEl.style.top = '118%';
@@ -622,7 +617,6 @@ function initVirtualOfficeWithOversizedCursor() {
     });
   }
 
-  // Trigger cursor entry when Oficina Virtual enters viewport
   if (mockupWindow && 'IntersectionObserver' in window) {
     const obs = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -637,7 +631,213 @@ function initVirtualOfficeWithOversizedCursor() {
 }
 
 /* --------------------------------------------------------------------------
-   9. FAQ Accordion
+   9. Vincentwei1021/video-shotcraft: aurora-bloom-bg-flip Engine
+      Exact 5200ms (156f@30fps) timeline:
+      - RISE [0.04, 0.56] outCubic: 4-layer blur(60px) aurora rises 32% -> -6%, scale 1 -> 1.25
+      - FLIP [0.57, 0.64] inOutQuad (~0.36s): Background RGB mix([236,236,236] -> [10,10,18]),
+        blobs compress (-6% overshoot squash) and dim to 0.40 afterglow, white edge layer -> 0
+      - Sentence A [0.40]: per-word stagger 0.04, dur 0.10, inQuad blur-out (0->8px) + lift (-5px)
+      - Blank Gap [0.58 -> 0.70]: ~0.6s intentional pause during the 0.36s background flip
+      - Sentence B [0.70]: per-word stagger 0.05, dur 0.11, outQuint blur-in (8->0px) + settle,
+        color mix(NEXSUS_BRAND [234,100,216] -> WHITE [245,245,250]) with self-glow dissipation
+   -------------------------------------------------------------------------- */
+function initAuroraBloomBgFlip() {
+  const stages = document.querySelectorAll('[data-aurora-stage]');
+  if (!stages.length) return;
+
+  const DURATION_MS = 5200; // 156 frames @ 30fps
+  const LIGHT = [236, 236, 236];
+  const DARK = [10, 10, 18];
+  const INK = [22, 23, 28];
+  const DEEPP = [234, 100, 216]; // Nexsus Brand Glow (#EA64D8 / #B903A4 family)
+  const WHITE = [245, 245, 250];
+  const SUB_DARK = [72, 72, 82];
+  const SUB_LIGHT = [168, 168, 180];
+
+  const RISE = [0.04, 0.56];
+  const FLIP = [0.57, 0.64];
+  const A_OUT = 0.40;
+  const B_IN = 0.70;
+
+  const lerp = (k, a, b) => a + (b - a) * k;
+  const mix = (a, b, k) =>
+    `rgb(${Math.round(a[0] + (b[0] - a[0]) * k)},${Math.round(a[1] + (b[1] - a[1]) * k)},${Math.round(a[2] + (b[2] - a[2]) * k)})`;
+
+  const E = {
+    outCubic: x => 1 - Math.pow(1 - x, 3),
+    inOutQuad: x => (x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2),
+    inQuad: x => x * x,
+    outQuad: x => 1 - (1 - x) * (1 - x),
+    outQuint: x => 1 - Math.pow(1 - x, 5),
+    swift: x => 1 - Math.pow(1 - x, 2.4),
+    overshoot: x => {
+      const c1 = 1.70158;
+      const c3 = c1 + 1;
+      return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
+    }
+  };
+
+  function seg(t, t0, t1, easeFn) {
+    if (t <= t0) return 0;
+    if (t >= t1) return 1;
+    const raw = (t - t0) / (t1 - t0);
+    return easeFn ? easeFn(raw) : raw;
+  }
+
+  stages.forEach(stage => {
+    const lightSky = stage.querySelector('[data-aurora-light-sky]');
+    const darkSky = stage.querySelector('[data-aurora-dark-sky]');
+    const blobsGroup = stage.querySelector('[data-aurora-blobs]');
+    const magentaBlob = stage.querySelector('[data-aurora-magenta]');
+    const coreBlob = stage.querySelector('[data-aurora-core]');
+    const whiteBlob = stage.querySelector('[data-aurora-white]');
+    const vignette = stage.querySelector('[data-aurora-vignette]');
+    const grain = stage.querySelector('[data-aurora-grain]');
+    const sentenceA = stage.querySelector('[data-aurora-sentence-a]');
+    const sentenceB = stage.querySelector('[data-aurora-sentence-b]');
+    const subtext = stage.querySelector('[data-aurora-subtext]');
+    const eyebrow = stage.querySelector('[data-aurora-eyebrow]');
+    const logo = stage.querySelector('[data-aurora-logo]');
+    const replayBtn = stage.querySelector('[data-aurora-replay]');
+
+    if (!sentenceA || !sentenceB || !blobsGroup) return;
+
+    // Tokenize Sentence A and Sentence B into individual word spans
+    const wordsAText = sentenceA.textContent.trim().split(/\s+/);
+    const wordsBText = sentenceB.textContent.trim().split(/\s+/);
+
+    sentenceA.innerHTML = wordsAText
+      .map(w => `<span class="aurora-word">${w}</span>`)
+      .join(' ');
+    sentenceB.innerHTML = wordsBText
+      .map(w => `<span class="aurora-word">${w}</span>`)
+      .join(' ');
+
+    const spansA = Array.from(sentenceA.querySelectorAll('.aurora-word'));
+    const spansB = Array.from(sentenceB.querySelectorAll('.aurora-word'));
+
+    let rafId = null;
+
+    function renderAt(t) {
+      const rise = seg(t, RISE[0], RISE[1], E.outCubic);
+      const flip = seg(t, FLIP[0], FLIP[1], E.inOutQuad);
+      const squash = seg(t, FLIP[0], FLIP[1] + 0.06, E.overshoot);
+      const drift = Math.sin(t * Math.PI * 2.2);
+      const drift2 = Math.sin(t * Math.PI * 1.6 + 1.1);
+
+      // 1. Frame-accurate background RGB mix (#ececec -> #0a0a12)
+      stage.style.backgroundColor = mix(LIGHT, DARK, flip);
+      stage.style.borderColor = flip > 0.5 ? 'rgba(255,255,255,0.12)' : 'rgba(17,17,19,0.1)';
+
+      // 2. Directional sky layers
+      if (lightSky) lightSky.style.opacity = (1 - flip).toFixed(3);
+      if (darkSky) darkSky.style.opacity = flip.toFixed(3);
+
+      // 3. Aurora blob group rise, scale, squash (-6%), and afterglow compression (1 -> 0.4)
+      const groupY = lerp(rise, 32, -6).toFixed(2);
+      const groupScale = (lerp(rise, 1, 1.25) * (1 - 0.06 * squash)).toFixed(4);
+      blobsGroup.style.transform = `translateY(${groupY}%) scale(${groupScale})`;
+      blobsGroup.style.opacity = lerp(flip, 1, 0.4).toFixed(3);
+
+      // 4. Relative internal drift for magenta transition & warm core + white edge collapse
+      if (magentaBlob) magentaBlob.style.transform = `translateX(${(drift2 * 6).toFixed(2)}%)`;
+      if (coreBlob) coreBlob.style.transform = `translateX(${(drift * 8).toFixed(2)}%)`;
+      if (whiteBlob) whiteBlob.style.opacity = (1 - flip).toFixed(3);
+
+      // 5. Vignette & Grain modulation
+      if (vignette) vignette.style.opacity = lerp(flip, 0.07, 0.55).toFixed(3);
+      if (grain) grain.style.opacity = lerp(flip, 0.05, 0.09).toFixed(3);
+
+      // 6. Auxiliary text & logo contrast adaptation across the 0.36s flip
+      if (subtext) subtext.style.color = mix(SUB_DARK, SUB_LIGHT, flip);
+      if (eyebrow) eyebrow.style.color = flip > 0.5 ? '#EA64D8' : '#B903A4';
+      if (logo) logo.style.filter = flip < 0.5 ? 'invert(0.88)' : 'invert(0)';
+
+      // 7. Sentence A: slow push-in (1 -> 1.035), then per-word blur-out (0->8px) + lift (-5px)
+      const pushA = lerp(seg(t, 0, A_OUT + 0.18, E.swift), 1, 1.035);
+      sentenceA.style.transform = `scale(${pushA.toFixed(4)})`;
+
+      spansA.forEach((span, i) => {
+        const out = seg(t, A_OUT + i * 0.04, A_OUT + 0.10 + i * 0.04, E.inQuad);
+        span.style.color = mix(INK, INK, 0);
+        span.style.opacity = (1 - out).toFixed(3);
+        span.style.filter = out > 0.005 ? `blur(${(out * 8).toFixed(2)}px)` : 'none';
+        span.style.transform = `translateY(${(-out * 5).toFixed(2)}px)`;
+      });
+
+      // 8. Sentence B: after ~0.6s blank gap, per-word outQuint blur-in + DEEPP -> WHITE settle
+      spansB.forEach((span, i) => {
+        const d0 = B_IN + i * 0.05;
+        const a = seg(t, d0, d0 + 0.11, E.outQuint);
+        const c = seg(t, d0 + 0.06, d0 + 0.15, E.outQuad);
+        span.style.opacity = a.toFixed(3);
+        span.style.filter = a < 0.995 ? `blur(${((1 - a) * 8).toFixed(2)}px)` : 'none';
+        span.style.transform = `translateY(${((1 - a) * 6).toFixed(2)}px)`;
+        span.style.color = mix(DEEPP, WHITE, c);
+        const glowAlpha = (0.48 * a * (1 - c)).toFixed(3);
+        span.style.textShadow = c < 0.99 ? `0 0 ${(12 * (1 - c)).toFixed(1)}px rgba(234,100,216,${glowAlpha})` : 'none';
+      });
+    }
+
+    function playAuroraFlip() {
+      if (rafId) cancelAnimationFrame(rafId);
+      const startTime = performance.now();
+
+      function tick(now) {
+        const elapsed = now - startTime;
+        const t = Math.min(elapsed / DURATION_MS, 1);
+        renderAt(t);
+        if (t < 1) {
+          rafId = requestAnimationFrame(tick);
+        } else {
+          // Gentle post-flip afterglow breathing loop on the dark stage
+          startAfterglowDrift();
+        }
+      }
+
+      rafId = requestAnimationFrame(tick);
+    }
+
+    function startAfterglowDrift() {
+      const driftStart = performance.now();
+      function breathe(now) {
+        const sec = (now - driftStart) / 1000;
+        const drift = Math.sin(sec * 1.3);
+        const drift2 = Math.sin(sec * 0.9 + 1.1);
+        if (magentaBlob) magentaBlob.style.transform = `translateX(${(drift2 * 6).toFixed(2)}%)`;
+        if (coreBlob) coreBlob.style.transform = `translateX(${(drift * 8).toFixed(2)}%)`;
+        rafId = requestAnimationFrame(breathe);
+      }
+      rafId = requestAnimationFrame(breathe);
+    }
+
+    // Initialize at t = 0 (light ground waiting for viewport trigger)
+    renderAt(0);
+
+    if (replayBtn) {
+      replayBtn.addEventListener('click', () => {
+        playAuroraFlip();
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            playAuroraFlip();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.32 });
+      obs.observe(stage);
+    } else {
+      playAuroraFlip();
+    }
+  });
+}
+
+/* --------------------------------------------------------------------------
+   10. FAQ Accordion
    -------------------------------------------------------------------------- */
 function initFaqAccordion() {
   const items = document.querySelectorAll('.faq-item');
@@ -665,7 +865,7 @@ function initFaqAccordion() {
 }
 
 /* --------------------------------------------------------------------------
-   10. Progressive Scroll Reveal (HyperFrames Wave Cascade)
+   11. Progressive Scroll Reveal (HyperFrames Wave Cascade)
    -------------------------------------------------------------------------- */
 function initScrollReveal() {
   const elements = document.querySelectorAll('.reveal');
@@ -685,3 +885,4 @@ function initScrollReveal() {
 
   elements.forEach(el => observer.observe(el));
 }
+

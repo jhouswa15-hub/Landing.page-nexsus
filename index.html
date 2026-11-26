@@ -224,19 +224,40 @@
           </article>
         </div>
 
-        <!-- DXN-Inspired Philosophy Block ("One World, One Market, One Vision") -->
-        <div class="dxn-philosophy-box reveal">
-          <div>
-            <span class="section-eyebrow">Filosofía Corporativa Nexsus</span>
-            <h3 style="font-family:var(--font-display); font-size:1.75rem; font-weight:800; line-height:1.18; margin-bottom:0.75rem;">
-              Un Mundo, Un Mercado, Una Sola Visión
-            </h3>
-            <p style="font-size:0.95rem; color:var(--text-inverse-muted); line-height:1.65;">
+        <!-- DXN-Inspired Philosophy Block with aurora-bloom-bg-flip ("One World, One Market, One Vision") -->
+        <div class="dxn-philosophy-box aurora-bloom-stage aurora-bloom-stage--philosophy reveal" data-aurora-stage="philosophy" id="aurora-stage-philosophy">
+          <div class="aurora-bloom__light-sky" data-aurora-light-sky></div>
+          <div class="aurora-bloom__dark-sky" data-aurora-dark-sky></div>
+          <div class="aurora-bloom__blobs" data-aurora-blobs>
+            <div class="aurora-blob aurora-blob--primary"></div>
+            <div class="aurora-blob aurora-blob--magenta" data-aurora-magenta></div>
+            <div class="aurora-blob aurora-blob--core" data-aurora-core></div>
+            <div class="aurora-blob aurora-blob--white" data-aurora-white></div>
+          </div>
+          <div class="aurora-bloom__vignette" data-aurora-vignette></div>
+          <div class="aurora-bloom__grain" data-aurora-grain></div>
+
+          <button type="button" class="aurora-replay-pill" data-aurora-replay aria-label="Repetir animación Aurora Bloom">
+            <span style="width:6px; height:6px; border-radius:50%; background:#EA64D8;"></span>
+            Aurora Bloom · Replay
+          </button>
+
+          <div class="aurora-bloom__content">
+            <span class="section-eyebrow" data-aurora-eyebrow>Filosofía Corporativa Nexsus</span>
+            <div class="aurora-narrative-stage aurora-narrative-stage--left">
+              <div class="aurora-sentence aurora-sentence--compact" data-aurora-sentence-a aria-hidden="true">
+                Emprender solía tener fronteras.
+              </div>
+              <h3 class="aurora-sentence aurora-sentence--compact" data-aurora-sentence-b>
+                Un Mundo, Un Mercado, Una Sola Visión
+              </h3>
+            </div>
+            <p style="font-size:0.95rem; line-height:1.65;" data-aurora-subtext>
               Inspirados en los estándares internacionales de excelencia en venta directa, operamos bajo tres principios que garantizan calidad constante, simplicidad operativa y expansión sin fronteras desde Perú.
             </p>
           </div>
 
-          <div class="dxn-philosophy-concepts">
+          <div class="dxn-philosophy-concepts aurora-bloom__content">
             <div class="philosophy-concept-item">
               <div class="philosophy-concept-item__tag">01 · Integración Total</div>
               <div class="philosophy-concept-item__title">Calidad de Origen</div>
@@ -1039,24 +1060,52 @@
     </section>
 
     <!-- ======================================================================
-         13. CTA FINAL
+         13. CTA FINAL (Vincentwei1021/video-shotcraft: aurora-bloom-bg-flip)
          ====================================================================== -->
     <section class="section" aria-label="Llamado a la acción final">
       <div class="container">
-        <div class="final-cta reveal">
-          <img src="assets/logo-white.png" alt="Nexsus Global" class="final-cta__logo" />
-          <h2 class="final-cta__title">El siguiente paso comienza contigo.</h2>
-          <p class="final-cta__text">
-            Conoce Nexsus Global, descubre nuestros productos y encuentra nuevas posibilidades para tu crecimiento.
-          </p>
-          <div class="final-cta__actions">
-            <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg" id="final-cta-join">
-              QUIERO UNIRME
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-            <a href="https://wa.me/51938513227?text=Hola%20Nexsus%20Global,%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="btn btn--ghost-dark btn--lg" id="final-cta-contact">
-              CONTACTAR CON NEXSUS
-            </a>
+        <div class="final-cta aurora-bloom-stage aurora-bloom-stage--cta reveal" data-aurora-stage="final-cta" id="aurora-stage-final-cta">
+          <div class="aurora-bloom__light-sky" data-aurora-light-sky></div>
+          <div class="aurora-bloom__dark-sky" data-aurora-dark-sky></div>
+          <div class="aurora-bloom__blobs" data-aurora-blobs>
+            <div class="aurora-blob aurora-blob--primary"></div>
+            <div class="aurora-blob aurora-blob--magenta" data-aurora-magenta></div>
+            <div class="aurora-blob aurora-blob--core" data-aurora-core></div>
+            <div class="aurora-blob aurora-blob--white" data-aurora-white></div>
+          </div>
+          <div class="aurora-bloom__vignette" data-aurora-vignette></div>
+          <div class="aurora-bloom__grain" data-aurora-grain></div>
+
+          <button type="button" class="aurora-replay-pill" data-aurora-replay aria-label="Repetir animación Aurora Bloom">
+            <span style="width:6px; height:6px; border-radius:50%; background:#EA64D8;"></span>
+            Aurora Bloom · Replay
+          </button>
+
+          <div class="aurora-bloom__content">
+            <img src="assets/logo-white.png" alt="Nexsus Global" class="final-cta__logo" data-aurora-logo />
+
+            <div class="aurora-narrative-stage">
+              <div class="aurora-sentence" data-aurora-sentence-a aria-hidden="true">
+                Tu bienestar merece nuevas posibilidades.
+              </div>
+              <h2 class="aurora-sentence" data-aurora-sentence-b>
+                El siguiente paso comienza contigo.
+              </h2>
+            </div>
+
+            <p class="final-cta__text" data-aurora-subtext>
+              Conoce Nexsus Global, descubre nuestros productos y encuentra nuevas posibilidades para tu crecimiento.
+            </p>
+
+            <div class="final-cta__actions">
+              <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg" id="final-cta-join">
+                QUIERO UNIRME
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </a>
+              <a href="https://wa.me/51938513227?text=Hola%20Nexsus%20Global,%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="btn btn--ghost-dark btn--lg" id="final-cta-contact">
+                CONTACTAR CON NEXSUS
+              </a>
+            </div>
           </div>
         </div>
       </div>
