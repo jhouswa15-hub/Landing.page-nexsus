@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NEXSUS GLOBAL | Bienestar, Nutrición Funcional y Red Comercial Internacional</title>
-  <meta name="description" content="NEXSUS GLOBAL es una empresa dedicada a la comercialización y distribución de productos orientados al bienestar, nutrición funcional, alimentos y bebidas a través de una red de distribuidores independientes." />
+  <title>Nexsus Global | Bienestar y Oportunidades de Emprendimiento</title>
+  <meta name="description" content="Conoce Nexsus Global, descubre nuestros productos de bienestar y forma parte de una comunidad enfocada en crecimiento, desarrollo y nuevas oportunidades." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
@@ -13,329 +13,334 @@
 <body>
 
   <!-- ========================================================================
-       Top International Bar (Kromasol-Inspired Country & Distributor Bar)
+       4. BARRA DE NAVEGACIÓN
        ======================================================================== -->
-  <div class="utility-bar" id="top-bar">
-    <div class="container utility-bar__inner">
-      <div class="utility-bar__left">
-        <span class="utility-bar__tag">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-          Expansión Multinivel &amp; Bienestar Funcional
-        </span>
-
-        <div class="country-selector" id="country-selector">
-          <button type="button" class="country-selector__btn" id="country-selector-btn" aria-expanded="false">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            <span id="selected-country-label">Perú (LATAM)</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-          </button>
-          <div class="country-selector__dropdown" id="country-dropdown" role="menu">
-            <button type="button" class="country-option is-active" data-country="Perú (LATAM)"><span>Perú</span><span>PE</span></button>
-            <button type="button" class="country-option" data-country="México"><span>México</span><span>MX</span></button>
-            <button type="button" class="country-option" data-country="Colombia"><span>Colombia</span><span>CO</span></button>
-            <button type="button" class="country-option" data-country="Ecuador"><span>Ecuador</span><span>EC</span></button>
-            <button type="button" class="country-option" data-country="Bolivia"><span>Bolivia</span><span>BO</span></button>
-            <button type="button" class="country-option" data-country="Chile"><span>Chile</span><span>CL</span></button>
-            <button type="button" class="country-option" data-country="Costa Rica"><span>Costa Rica</span><span>CR</span></button>
-            <button type="button" class="country-option" data-country="Estados Unidos"><span>Estados Unidos</span><span>US</span></button>
-          </div>
-        </div>
-      </div>
-
-      <div class="utility-bar__right">
-        <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="utility-bar__portal-link" id="top-portal-link">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6"/><path d="M22 11h-6"/></svg>
-          Acceso Oficina Virtual / Registro
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ========================================================================
-       Main Sticky Header
-       ======================================================================== -->
-  <header class="site-header" id="site-header">
-    <div class="container site-header__inner">
-      <a href="#inicio" class="brand-logo" id="header-logo">
-        <img src="assets/logo-color.png" alt="NEXSUS GLOBAL Logo" />
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#inicio" class="navbar__logo" id="nav-logo" aria-label="Nexsus Global Inicio">
+        <img src="assets/logo-color.png" alt="Nexsus Global Logo" />
       </a>
 
-      <nav class="main-nav" id="main-nav" aria-label="Navegación Principal">
-        <a href="#inicio" class="main-nav__link is-active">Inicio</a>
-        <a href="#productos" class="main-nav__link">Productos</a>
-        <a href="#recomendador" class="main-nav__link">Bienestar Ideal</a>
-        <a href="#negocio" class="main-nav__link">Oportunidad</a>
-        <a href="#ecosistema" class="main-nav__link">Plataforma Digital</a>
-        <a href="#historias" class="main-nav__link">Historias</a>
+      <nav class="navbar__menu" aria-label="Navegación Principal">
+        <a href="#inicio" class="navbar__link is-active">Inicio</a>
+        <a href="#nosotros" class="navbar__link">Nosotros</a>
+        <a href="#productos" class="navbar__link">Productos</a>
+        <a href="#oportunidad" class="navbar__link">Oportunidad</a>
+        <a href="#como-funciona" class="navbar__link">Cómo funciona</a>
+        <a href="#preguntas-frecuentes" class="navbar__link">Preguntas frecuentes</a>
+        <a href="#contacto" class="navbar__link">Contacto</a>
       </nav>
 
-      <div class="header-actions">
-        <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--outline" id="header-login-btn">
-          Soy Distribuidor
+      <div class="navbar__actions">
+        <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="navbar__office-link" id="nav-virtual-office">
+          Ingresar a Oficina Virtual
         </a>
-        <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary" id="header-register-btn">
-          Afíliate / Iniciar Sesión
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--sm" id="nav-join-btn">
+          Únete a Nexsus
         </a>
-        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-        </button>
       </div>
+
+      <button type="button" class="navbar__toggle" id="mobile-menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
     </div>
   </header>
 
+  <!-- Menú Móvil -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-label="Menú móvil">
+    <nav class="mobile-drawer__list">
+      <a href="#inicio" class="mobile-drawer__link">Inicio</a>
+      <a href="#nosotros" class="mobile-drawer__link">Nosotros</a>
+      <a href="#productos" class="mobile-drawer__link">Productos</a>
+      <a href="#oportunidad" class="mobile-drawer__link">Oportunidad</a>
+      <a href="#como-funciona" class="mobile-drawer__link">Cómo funciona</a>
+      <a href="#preguntas-frecuentes" class="mobile-drawer__link">Preguntas frecuentes</a>
+      <a href="#contacto" class="mobile-drawer__link">Contacto</a>
+    </nav>
+    <div class="mobile-drawer__actions">
+      <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--secondary" id="mobile-virtual-office">
+        Ingresar a Oficina Virtual
+      </a>
+      <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary" id="mobile-join-btn">
+        Únete a Nexsus
+      </a>
+    </div>
+  </div>
+
   <main>
     <!-- ======================================================================
-         Dynamic Hero Showcase
+         3. HERO PRINCIPAL
          ====================================================================== -->
     <section class="hero" id="inicio">
-      <div class="hero__ambient-circle" aria-hidden="true"></div>
       <div class="container hero__grid">
-        <div class="hero__content">
-          <span class="hero__eyebrow">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            Nutrición Funcional &amp; Red Comercial Multinivel
-          </span>
+        <div class="hero__content reveal is-visible">
+          <div class="hero__brand-mark">
+            <img src="assets/logo-color.png" alt="Nexsus Global" />
+            <span class="hero__brand-origin">Perú · Visión Internacional</span>
+          </div>
+
           <h1 class="hero__title">
-            Innovación nutricional y bienestar que transforman tu estilo de vida.
+            Construye tu bienestar. Expande tus posibilidades.
           </h1>
+
           <p class="hero__subtitle">
-            En <strong>NEXSUS GLOBAL</strong> desarrollamos alimentos, bebidas y fórmulas funcionales con superalimentos, impulsando tu crecimiento mediante nuestra red de distribuidores independientes y herramientas digitales inteligentes.
+            Conecta con una comunidad global, descubre productos de bienestar y desarrolla una nueva forma de emprender.
           </p>
 
-          <div class="hero__cta-group">
-            <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg" id="hero-register-cta">
-              Inscríbete o Inicia Sesión
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <div class="hero__actions">
+            <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg" id="hero-cta-join">
+              QUIERO SER PARTE
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
-            <a href="#productos" class="btn btn--outline btn--lg" id="hero-products-cta">
-              Explorar Productos
+            <a href="#nosotros" class="btn btn--secondary btn--lg" id="hero-cta-discover">
+              CONOCE NEXSUS GLOBAL
             </a>
           </div>
 
-          <div class="hero__trust-strip">
-            <div class="trust-metric">
-              <div class="trust-metric__value">100% Funcional</div>
-              <div class="trust-metric__label">Extractos botánicos, ganoderma y superalimentos</div>
+          <div class="hero__pillars">
+            <div>
+              <div class="hero__pillar-title">Bienestar Funcional</div>
+              <div class="hero__pillar-sub">Portafolio para tu estilo de vida diario</div>
             </div>
-            <div class="trust-metric">
-              <div class="trust-metric__value">Red Global</div>
-              <div class="trust-metric__label">Plan de afiliación, activaciones y comisiones</div>
+            <div>
+              <div class="hero__pillar-title">Comunidad Activa</div>
+              <div class="hero__pillar-sub">Desarrollo empresarial y liderazgo</div>
             </div>
-            <div class="trust-metric">
-              <div class="trust-metric__value">Gestión 24/7</div>
-              <div class="trust-metric__label">Plataforma digital para pedidos y distribuidores</div>
+            <div>
+              <div class="hero__pillar-title">Ecosistema Digital</div>
+              <div class="hero__pillar-sub">Gestión transparente en Oficina Virtual</div>
             </div>
           </div>
         </div>
 
-        <!-- Interactive Hero Stage -->
-        <div class="hero-stage" id="hero-stage">
-          <div class="hero-stage__header">
-            <span class="hero-stage__badge" id="stage-badge">Formulación Avanzada</span>
-            <span class="hero-stage__weight" id="stage-weight">30 Sachets · 300g</span>
+        <div class="hero__visual reveal is-visible">
+          <div class="hero__image-frame">
+            <img src="assets/hero-lifestyle.jpg" alt="Comunidad de emprendedores Nexsus Global colaborando en un entorno moderno" />
           </div>
-
-          <div class="hero-stage__visual">
-            <div class="hero-stage__glow" aria-hidden="true"></div>
-            <img src="assets/mockup_lanzate_bolsa.png" alt="LanzaTe - Formulación Avanzada Nexsus Global" class="hero-stage__img" id="stage-image" />
-          </div>
-
-          <div class="hero-stage__info">
-            <h2 class="hero-stage__name" id="stage-name">LanzaTe · Digestión y Detox</h2>
-            <p class="hero-stage__desc" id="stage-desc">Fórmula en polvo a base de plantas funcionales, yacón, noni, ganoderma y chaga.</p>
-          </div>
-
-          <div class="hero-stage__switcher" role="tablist" aria-label="Cambiar producto destacado">
-            <button type="button" class="stage-tab is-active" data-product-idx="0" id="stage-tab-0">
-              <span class="stage-tab__dot" style="background:#009e1a;"></span>
-              LanzaTe
-            </button>
-            <button type="button" class="stage-tab" data-product-idx="1" id="stage-tab-1">
-              <span class="stage-tab__dot" style="background:#d9141d;"></span>
-              Alokate
-            </button>
-            <button type="button" class="stage-tab" data-product-idx="2" id="stage-tab-2">
-              <span class="stage-tab__dot" style="background:#17171a;"></span>
-              MiNegro
-            </button>
-            <button type="button" class="stage-tab" data-product-idx="3" id="stage-tab-3">
-              <span class="stage-tab__dot" style="background:#b34200;"></span>
-              MiCafé
-            </button>
+          <div class="hero__floating-card">
+            <div class="hero__floating-meta">
+              <div class="hero__floating-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <div>
+                <div class="hero__floating-title">Ecosistema Corporativo Nexsus</div>
+                <div class="hero__floating-desc">Bienestar, formación y tecnología para distribuidores independientes</div>
+              </div>
+            </div>
+            <a href="#oficina-virtual" class="btn btn--secondary btn--sm">Ver Plataforma</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         Dynamic Marquee Strip (Bio-Active Superfoods)
+         5. SECCIÓN "CONOCE NEXSUS GLOBAL" (NOSOTROS)
          ====================================================================== -->
-    <div class="ingredient-strip" aria-label="Ingredientes funcionales Nexsus Global">
-      <div class="ingredient-strip__track">
-        <div class="ingredient-strip__group">
-          <span class="ingredient-item"><span class="ingredient-item__sep"></span>Hongo Ganoderma</span>
-          <span class="ingredient-item"><span class="ingredient-item__sep"></span>Hongo Chaga</span>
-          <span class="ingredient-item"><span class="ingredient-item__sep"></span>Maca Negra</span>
-          <span class="ingredient-item"><span class="ingredient-item__sep"></span>Camu Camu &amp; Arándanos</span>
-          <span class="ingredient-item"><span class="ingredient-item__sep"></span>Sacha Inchi &amp; Cacao</span>
-          <span class="ingredient-item"><span class="ingredient-item__sep"></span>Yacón &amp; Noni</span>
-          <span class="ingredient-item"><span class="ingredient-item__sep"></span>Uña de Gato &amp; Pitahaya</span>
-          <span class="ingredient-item"><span class="ingredient-item__sep"></span>Endulzado con Estevia</span>
-        </div>
-        <div class="ingredient-strip__group" aria-hidden="true">
-          <span class="ingredient-item"><span class="ingredient-item__sep"></span>Hongo Ganoderma</span>
-          <span class="ingredient-item"><span class="ingredient-item__sep"></span>Hongo Chaga</span>
-          <span class="ingredient-item"><span class="ingredient-item__sep"></span>Maca Negra</span>
-          <span class="ingredient-item"><span class="ingredient-item__sep"></span>Camu Camu &amp; Arándanos</span>
-          <span class="ingredient-item"><span class="ingredient-item__sep"></span>Sacha Inchi &amp; Cacao</span>
-          <span class="ingredient-item"><span class="ingredient-item__sep"></span>Yacón &amp; Noni</span>
-          <span class="ingredient-item"><span class="ingredient-item__sep"></span>Uña de Gato &amp; Pitahaya</span>
-          <span class="ingredient-item"><span class="ingredient-item__sep"></span>Endulzado con Estevia</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ======================================================================
-         Productos Nutrimentales con Actitud
-         ====================================================================== -->
-    <section class="section" id="productos">
+    <section class="section" id="nosotros">
       <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">Productos con Mucha Actitud</span>
-          <h2 class="section-title">Línea Nutrimental &amp; Bebidas Funcionales</h2>
-          <p class="section-description">
-            Cada fórmula de NEXSUS GLOBAL combina superalimentos andinos, amazónicos y extractos herbales de alta biodisponibilidad en prácticos sachets diarios.
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Conoce Nexsus Global</span>
+          <h2 class="section-title">Una nueva forma de conectar bienestar y emprendimiento.</h2>
+          <p class="section-lead">
+            Nexsus Global nace con la visión de construir una comunidad de personas que buscan desarrollar nuevas oportunidades, acceder a productos de bienestar y crecer dentro de un ecosistema empresarial moderno.
           </p>
         </div>
 
-        <div class="product-filters" role="tablist" aria-label="Filtrar productos por categoría">
-          <button type="button" class="filter-btn is-active" data-filter="all" id="filter-all">Todos los Productos (4)</button>
-          <button type="button" class="filter-btn" data-filter="detox" id="filter-detox">Digestión &amp; Detox</button>
-          <button type="button" class="filter-btn" data-filter="energia" id="filter-energia">Energía &amp; Vitalidad</button>
-          <button type="button" class="filter-btn" data-filter="cafe" id="filter-cafe">Cafés Gourmet Funcionales</button>
+        <div class="about-pillars">
+          <!-- Concepto 1: Bienestar -->
+          <article class="about-card reveal">
+            <div class="about-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+              </svg>
+            </div>
+            <h3 class="about-card__title">Bienestar</h3>
+            <p class="about-card__text">
+              Productos pensados para acompañar un estilo de vida saludable.
+            </p>
+          </article>
+
+          <!-- Concepto 2: Comunidad -->
+          <article class="about-card reveal">
+            <div class="about-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3 class="about-card__title">Comunidad</h3>
+            <p class="about-card__text">
+              Una red de personas conectadas por objetivos y crecimiento.
+            </p>
+          </article>
+
+          <!-- Concepto 3: Oportunidad -->
+          <article class="about-card reveal">
+            <div class="about-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                <polyline points="16 7 22 7 22 13" />
+              </svg>
+            </div>
+            <h3 class="about-card__title">Oportunidad</h3>
+            <p class="about-card__text">
+              Un modelo diseñado para desarrollar habilidades comerciales y emprendimiento.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. SECCIÓN DE PRODUCTOS
+         ====================================================================== -->
+    <section class="section section--light" id="productos">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Portafolio Oficial</span>
+          <h2 class="section-title">Descubre nuestro portafolio de bienestar</h2>
+          <p class="section-lead">
+            Fórmulas funcionales en polvo con ingredientes naturales y superalimentos seleccionados para complementar tu nutrición y rutina diaria.
+          </p>
         </div>
 
-        <div class="products-grid" id="products-grid">
-          <!-- Product 1: LANZATE -->
-          <article class="product-card" data-category="detox" style="--card-bg:#edf9f0; --card-accent:#008a16;">
-            <div class="product-card__visual">
-              <span class="product-card__tag">Superalimentos</span>
-              <img src="assets/mockup_lanzate_bolsa.png" alt="Bolsa LanzaTe Formulación Avanzada" class="product-card__img" />
+        <div class="portfolio-grid">
+          <!-- Producto 1: Micafé -->
+          <article class="product-card reveal">
+            <div class="product-card__stage">
+              <span class="product-card__badge">Equilibrio Perfecto</span>
+              <img src="assets/mockup_micafe_bolsa.png" alt="Micafé Nexsus Global" class="product-card__img" />
             </div>
-            <div class="product-card__body">
+            <div class="product-card__content">
               <div>
-                <div class="product-card__subtitle">Formulación Avanzada</div>
-                <h3 class="product-card__title">LanzaTe</h3>
-                <p class="product-card__summary">
-                  Fórmula en polvo a base de plantas funcionales y superalimentos diseñada para promover la limpieza digestiva, ligereza y bienestar integral.
+                <h3 class="product-card__name">Micafé</h3>
+                <p class="product-card__desc">
+                  Mezcla en polvo para preparar café gourmet funcional instantáneo con cacao, sacha inchi, algarrobo, coco y ganoderma.
                 </p>
-                <div class="product-card__ingredients">
-                  <span class="ingredient-pill">Anís &amp; Manzanilla</span>
-                  <span class="ingredient-pill">Yacón &amp; Pitahaya</span>
-                  <span class="ingredient-pill">Uña de Gato</span>
-                  <span class="ingredient-pill">Noni &amp; Tamarindo</span>
-                  <span class="ingredient-pill">Ganoderma &amp; Chaga</span>
-                  <span class="ingredient-pill">Estevia</span>
-                </div>
+                <ul class="product-card__benefits">
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Acompaña tu equilibrio nutricional diario
+                  </li>
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Aporte natural de cacao, coco y sacha inchi
+                  </li>
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Endulzado naturalmente con estevia (30 sachets)
+                  </li>
+                </ul>
               </div>
-              <div class="product-card__footer">
-                <span class="product-card__spec">30 Sachets · Peso Neto 300g</span>
-                <div class="product-card__actions">
-                  <button type="button" class="btn-text-action" data-modal-product="0">Ficha Técnica</button>
-                </div>
-              </div>
+              <button type="button" class="btn btn--primary btn--sm product-card__btn" data-product-modal="micafe" id="btn-product-micafe">
+                Conocer producto
+              </button>
             </div>
           </article>
 
-          <!-- Product 2: ALOKATE -->
-          <article class="product-card" data-category="energia" style="--card-bg:#fdf0f0; --card-accent:#c91019;">
-            <div class="product-card__visual">
-              <span class="product-card__tag">Energía Natural</span>
-              <img src="assets/mockup_alokate_bolsa.png" alt="Bolsa Alokate Energizante Vital" class="product-card__img" />
+          <!-- Producto 2: Minegro -->
+          <article class="product-card reveal">
+            <div class="product-card__stage">
+              <span class="product-card__badge">Bienestar Intenso</span>
+              <img src="assets/mockup_minegro_bolsa.png" alt="Minegro Nexsus Global" class="product-card__img" />
             </div>
-            <div class="product-card__body">
+            <div class="product-card__content">
               <div>
-                <div class="product-card__subtitle">Energizante Vital</div>
-                <h3 class="product-card__title">ALOKATE</h3>
-                <p class="product-card__summary">
-                  Fórmula en polvo para preparar bebida a base de aminoácidos y extractos vegetales que potencian el rendimiento físico, enfoque mental y vitalidad diaria.
+                <h3 class="product-card__name">Minegro</h3>
+                <p class="product-card__desc">
+                  Mezcla en polvo para preparar café gourmet instantáneo de carácter intenso con ganoderma, hongo chaga, cebada y linaza.
                 </p>
-                <div class="product-card__ingredients">
-                  <span class="ingredient-pill">Maca Negra</span>
-                  <span class="ingredient-pill">Camu Camu</span>
-                  <span class="ingredient-pill">Arándanos</span>
-                  <span class="ingredient-pill">Noni</span>
-                  <span class="ingredient-pill">Yacón</span>
-                  <span class="ingredient-pill">Aminoácidos + Estevia</span>
-                </div>
+                <ul class="product-card__benefits">
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Sabor intenso para tus mañanas activas
+                  </li>
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Con hongos funcionales ganoderma y chaga
+                  </li>
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Práctica presentación de 30 sachets (300g)
+                  </li>
+                </ul>
               </div>
-              <div class="product-card__footer">
-                <span class="product-card__spec">30 Sachets · Peso Neto 360g</span>
-                <div class="product-card__actions">
-                  <button type="button" class="btn-text-action" data-modal-product="1">Ficha Técnica</button>
-                </div>
-              </div>
+              <button type="button" class="btn btn--primary btn--sm product-card__btn" data-product-modal="minegro" id="btn-product-minegro">
+                Conocer producto
+              </button>
             </div>
           </article>
 
-          <!-- Product 3: MINEGRO -->
-          <article class="product-card" data-category="cafe" style="--card-bg:#f0f0f3; --card-accent:#1c1c21;">
-            <div class="product-card__visual">
-              <span class="product-card__tag">Café Gourmet</span>
-              <img src="assets/mockup_minegro_bolsa.png" alt="Bolsa MiNegro Bienestar Intenso" class="product-card__img" />
+          <!-- Producto 3: Lanzate -->
+          <article class="product-card reveal">
+            <div class="product-card__stage">
+              <span class="product-card__badge">Formulación Avanzada</span>
+              <img src="assets/mockup_lanzate_bolsa.png" alt="Lanzate Nexsus Global" class="product-card__img" />
             </div>
-            <div class="product-card__body">
+            <div class="product-card__content">
               <div>
-                <div class="product-card__subtitle">Bienestar Intenso</div>
-                <h3 class="product-card__title">MINEGRO</h3>
-                <p class="product-card__summary">
-                  Mezcla en polvo para preparar café gourmet instantáneo enriquecido con hongos adaptógenos y fibras naturales de cuerpo intenso y aroma profundo.
+                <h3 class="product-card__name">Lanzate</h3>
+                <p class="product-card__desc">
+                  Fórmula en polvo a base de plantas funcionales, yacón, manzanilla, pitahaya, tamarindo, papaya y superalimentos.
                 </p>
-                <div class="product-card__ingredients">
-                  <span class="ingredient-pill">Café Gourmet</span>
-                  <span class="ingredient-pill">Ganoderma</span>
-                  <span class="ingredient-pill">Hongo Chaga</span>
-                  <span class="ingredient-pill">Cebada &amp; Linaza</span>
-                  <span class="ingredient-pill">Noni &amp; Tamarindo</span>
-                </div>
+                <ul class="product-card__benefits">
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Sensación de ligereza y bienestar digestivo
+                  </li>
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Sinergia de extractos botánicos y fibras
+                  </li>
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Ideal para integrar en hábitos saludables
+                  </li>
+                </ul>
               </div>
-              <div class="product-card__footer">
-                <span class="product-card__spec">30 Sachets · Peso Neto 300g</span>
-                <div class="product-card__actions">
-                  <button type="button" class="btn-text-action" data-modal-product="2">Ficha Técnica</button>
-                </div>
-              </div>
+              <button type="button" class="btn btn--primary btn--sm product-card__btn" data-product-modal="lanzate" id="btn-product-lanzate">
+                Conocer producto
+              </button>
             </div>
           </article>
 
-          <!-- Product 4: MICAFÉ -->
-          <article class="product-card" data-category="cafe" style="--card-bg:#fcf3eb; --card-accent:#a83d00;">
-            <div class="product-card__visual">
-              <span class="product-card__tag">Café Funcional</span>
-              <img src="assets/mockup_micafe_bolsa.png" alt="Bolsa MiCafé Equilibrio Perfecto" class="product-card__img" />
+          <!-- Producto 4: Alokate -->
+          <article class="product-card reveal">
+            <div class="product-card__stage">
+              <span class="product-card__badge">Energizante Vital</span>
+              <img src="assets/mockup_alokate_bolsa.png" alt="Alokate Nexsus Global" class="product-card__img" />
             </div>
-            <div class="product-card__body">
+            <div class="product-card__content">
               <div>
-                <div class="product-card__subtitle">Equilibrio Perfecto</div>
-                <h3 class="product-card__title">MICAFÉ</h3>
-                <p class="product-card__summary">
-                  Mezcla en polvo para preparar café gourmet funcional instantáneo con notas cremosas de cacao, coco, algarrobo y ácidos grasos esenciales de sacha inchi.
+                <h3 class="product-card__name">Alokate</h3>
+                <p class="product-card__desc">
+                  Fórmula en polvo para preparar bebida refrescante a base de aminoácidos, maca negra, camu camu, arándanos y yacón.
                 </p>
-                <div class="product-card__ingredients">
-                  <span class="ingredient-pill">Café &amp; Ganoderma</span>
-                  <span class="ingredient-pill">Cacao &amp; Coco</span>
-                  <span class="ingredient-pill">Sacha Inchi</span>
-                  <span class="ingredient-pill">Yacón &amp; Algarrobo</span>
-                  <span class="ingredient-pill">Cebada &amp; Estevia</span>
-                </div>
+                <ul class="product-card__benefits">
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Acompaña jornadas dinámicas y actividad física
+                  </li>
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Superalimentos peruanos: maca negra y camu camu
+                  </li>
+                  <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Vitalidad natural endulzada con estevia
+                  </li>
+                </ul>
               </div>
-              <div class="product-card__footer">
-                <span class="product-card__spec">30 Sachets · Peso Neto 480g</span>
-                <div class="product-card__actions">
-                  <button type="button" class="btn-text-action" data-modal-product="3">Ficha Técnica</button>
-                </div>
-              </div>
+              <button type="button" class="btn btn--primary btn--sm product-card__btn" data-product-modal="alokate" id="btn-product-alokate">
+                Conocer producto
+              </button>
             </div>
           </article>
         </div>
@@ -343,345 +348,273 @@
     </section>
 
     <!-- ======================================================================
-         Interactive Wellness Recommender ("Asesor Nutricional Dinámico")
+         7. SECCIÓN DE OPORTUNIDAD & CÓMO FUNCIONA (Horizontal Timeline)
          ====================================================================== -->
-    <section class="section section--white" id="recomendador">
-      <div class="container">
-        <div class="recommender-box">
+    <section class="section" id="oportunidad">
+      <div class="container" id="como-funciona">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Oportunidad &amp; Cómo Funciona</span>
+          <h2 class="section-title">Tu crecimiento puede comenzar hoy.</h2>
+          <p class="section-lead">
+            Un proceso claro, estructurado y transparente para integrarte a nuestra red comercial y desarrollar tu propio camino empresarial.
+          </p>
+        </div>
+
+        <div class="timeline-grid">
+          <article class="timeline-step reveal">
+            <span class="timeline-step__number">01 — Regístrate</span>
+            <h3 class="timeline-step__title">Únete a la comunidad</h3>
+            <p class="timeline-step__desc">
+              Forma parte de la comunidad Nexsus Global.
+            </p>
+          </article>
+
+          <article class="timeline-step reveal">
+            <span class="timeline-step__number">02 — Conoce nuestros productos</span>
+            <h3 class="timeline-step__title">Experimenta el bienestar</h3>
+            <p class="timeline-step__desc">
+              Descubre nuestro portafolio de bienestar.
+            </p>
+          </article>
+
+          <article class="timeline-step reveal">
+            <span class="timeline-step__number">03 — Comparte</span>
+            <h3 class="timeline-step__title">Conecta con personas</h3>
+            <p class="timeline-step__desc">
+              Comparte productos y experiencias con otras personas.
+            </p>
+          </article>
+
+          <article class="timeline-step reveal">
+            <span class="timeline-step__number">04 — Desarrolla tu negocio</span>
+            <h3 class="timeline-step__title">Lidera y crece</h3>
+            <p class="timeline-step__desc">
+              Construye relaciones, desarrolla habilidades y haz crecer tu organización.
+            </p>
+          </article>
+        </div>
+
+        <div class="opportunity-cta-bar reveal">
           <div>
-            <span class="section-eyebrow">Experiencia Interactiva de Bienestar</span>
-            <h2 class="section-title">¿Cuál es tu meta de bienestar hoy?</h2>
-            <p class="section-description">
-              Selecciona el objetivo principal que deseas impulsar en tu rutina diaria y descubre la fórmula funcional NEXSUS GLOBAL recomendada para ti.
-            </p>
-
-            <div class="goal-buttons" role="tablist" aria-label="Metas de bienestar">
-              <button type="button" class="goal-btn is-active" data-goal="0" id="goal-btn-0">
-                <span class="goal-btn__title">1. Limpieza &amp; Digestión</span>
-                <span class="goal-btn__sub">Desintoxicación herbal y ligereza</span>
-              </button>
-              <button type="button" class="goal-btn" data-goal="1" id="goal-btn-1">
-                <span class="goal-btn__title">2. Energía &amp; Deporte</span>
-                <span class="goal-btn__sub">Vitalidad física y aminoácidos</span>
-              </button>
-              <button type="button" class="goal-btn" data-goal="2" id="goal-btn-2">
-                <span class="goal-btn__title">3. Enfoque &amp; Antioxidantes</span>
-                <span class="goal-btn__sub">Café negro intenso con adaptógenos</span>
-              </button>
-              <button type="button" class="goal-btn" data-goal="3" id="goal-btn-3">
-                <span class="goal-btn__title">4. Nutrición &amp; Equilibrio</span>
-                <span class="goal-btn__sub">Café funcional con cacao y sacha inchi</span>
-              </button>
-            </div>
+            <h3 style="font-family:var(--font-display); font-size:1.25rem; font-weight:700;">¿Listo para dar el primer paso con Nexsus Global?</h3>
+            <p style="font-size:0.9375rem; color:var(--text-secondary);">Regístrate en nuestra plataforma oficial o conversa con un asesor para resolver tus dudas.</p>
           </div>
-
-          <div class="recommendation-result" id="recommendation-result">
-            <img src="assets/mockup_lanzate_bolsa.png" alt="Producto Recomendado" class="recommendation-result__img" id="rec-img" />
-            <div>
-              <span class="recommendation-result__tag" id="rec-tag">Fórmula Recomendada · 30 Sachets</span>
-              <h3 class="recommendation-result__title" id="rec-title">LanzaTe · Formulación Avanzada</h3>
-              <p class="recommendation-result__text" id="rec-text">
-                Ideal para renovar tu sistema digestivo gracias a su sinergia de anís, yacón, manzanilla, uña de gato, pitahaya, papaya, hojas de sen, ganoderma y chaga.
-              </p>
-              <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary" id="rec-cta">
-                Adquirir o Distribuir Ahora
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         Inicia Tu Carrera en NEXSUS GLOBAL (Multilevel & Direct Sales Model)
-         ====================================================================== -->
-    <section class="section" id="negocio">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">Inicia tu Carrera en Nexsus Global</span>
-          <h2 class="section-title">Un Modelo de Negocio Multinivel Diseñado para Tu Expansión</h2>
-          <p class="section-description">
-            Desarrollamos canales de venta directa y distribución a través de una red de distribuidores independientes con programas de afiliación, activación e incentivos transparentes.
-          </p>
-        </div>
-
-        <div class="career-grid">
-          <!-- Pillar 1 -->
-          <div class="career-card">
-            <div>
-              <div class="career-card__icon">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
-              </div>
-              <div class="career-card__step">Pilar 01 · Venta Directa &amp; Red</div>
-              <h3 class="career-card__title">Programas de Afiliación y Activación</h3>
-              <p class="career-card__desc">
-                Inscríbete como distribuidor independiente y accede a precios preferenciales, paquetes de activación mensual y margen directo por comercialización de productos de alta rotación.
-              </p>
-            </div>
-            <ul class="career-card__list">
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Registro inmediato en línea
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Activaciones flexibles por volumen
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Productos de consumo diario repetitivo
-              </li>
-            </ul>
-          </div>
-
-          <!-- Pillar 2 -->
-          <div class="career-card">
-            <div>
-              <div class="career-card__icon">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              </div>
-              <div class="career-card__step">Pilar 02 · Plan de Compensación</div>
-              <h3 class="career-card__title">Grandes Recompensas y Comisiones</h3>
-              <p class="career-card__desc">
-                Multiplica tus ingresos construyendo y liderando tu propia red comercial. Recibe comisiones residuales, bonos por patrocinio y premios por metas alcanzadas.
-              </p>
-            </div>
-            <ul class="career-card__list">
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Ganancias por venta directa hasta 40%
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Bonos multinivel por expansión de red
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Liquidación transparente de comisiones
-              </li>
-            </ul>
-          </div>
-
-          <!-- Pillar 3 -->
-          <div class="career-card">
-            <div>
-              <div class="career-card__icon">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
-              </div>
-              <div class="career-card__step">Pilar 03 · Liderazgo &amp; Eventos</div>
-              <h3 class="career-card__title">Incentivos, Convivencias y Beneficios</h3>
-              <p class="career-card__desc">
-                Participa en entrenamientos corporativos, eventos de liderazgo, reconocimientos de rango y programas de incentivos exclusivos para nuestra comunidad global.
-              </p>
-            </div>
-            <ul class="career-card__list">
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Academia de liderazgo y capacitación
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Eventos y convivencias de distribuidores
-              </li>
-              <li>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Bonos de estilo de vida y viajes
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Interactive Network & Commission Simulator -->
-        <div class="simulator-card" id="simulador-red">
-          <div>
-            <span class="section-eyebrow">Proyección Dinámica de Crecimiento</span>
-            <h3 class="section-title" style="color:#ffffff;">Simulador de Red Comercial &amp; Comisiones</h3>
-            <p class="section-description">
-              Ajusta tu volumen mensual de bolsas comercializadas y el tamaño de tu equipo activo para visualizar el potencial de ingresos combinando venta directa y regalías de red.
-            </p>
-
-            <div class="simulator-controls">
-              <div class="slider-group">
-                <div class="slider-group__header">
-                  <label for="direct-sales-range" class="slider-group__label">Venta Directa Personal (Bolsas / mes)</label>
-                  <span class="slider-group__val" id="direct-sales-val">30 bolsas</span>
-                </div>
-                <input type="range" id="direct-sales-range" class="nx-range" min="10" max="150" step="5" value="30" />
-              </div>
-
-              <div class="slider-group">
-                <div class="slider-group__header">
-                  <label for="network-members-range" class="slider-group__label">Distribuidores Activos en tu Red</label>
-                  <span class="slider-group__val" id="network-members-val">15 socios</span>
-                </div>
-                <input type="range" id="network-members-range" class="nx-range" min="0" max="200" step="5" value="15" />
-              </div>
-            </div>
-          </div>
-
-          <div class="simulator-output">
-            <span class="simulator-output__rank-badge" id="sim-rank">Rango Estimado: Líder Ejecutivo</span>
-            <div class="simulator-output__label">Potencial Mensual Estimado (USD)</div>
-            <div class="simulator-output__amount" id="sim-total">$1,095 USD / mes</div>
-
-            <div class="simulator-output__breakdown">
-              <div>
-                <div class="breakdown-item__label">Margen Venta Directa</div>
-                <div class="breakdown-item__val" id="sim-direct">$420 USD</div>
-              </div>
-              <div>
-                <div class="breakdown-item__label">Comisiones &amp; Bonos de Red</div>
-                <div class="breakdown-item__val" id="sim-network">$675 USD</div>
-              </div>
-            </div>
-
-            <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="width:100%;" id="sim-register-btn">
-              Activar mi Código de Distribuidor
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          <div style="display:flex; flex-wrap:wrap; gap:0.75rem;">
+            <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary" id="opportunity-cta-emprender">
+              Quiero emprender
             </a>
-            <p class="simulator-output__disclaimer">
-              *Proyección referencial con fines ilustrativos basada en comercialización activa y duplicación de red.
-            </p>
+            <a href="https://wa.me/51938513227?text=Hola%20Nexsus%20Global,%20deseo%20informaci%C3%B3n%20sobre%20la%20oportunidad%20de%20emprendimiento." target="_blank" rel="noopener noreferrer" class="btn btn--secondary" id="opportunity-cta-advisor">
+              Hablar con un asesor
+            </a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         Global Impact Counter Band (Kromasol-Inspired Numbers)
+         8. SECCIÓN "LIBERTAD Y ESTILO DE VIDA"
          ====================================================================== -->
-    <section class="stats-band" aria-label="Cifras de impacto Nexsus Global">
-      <div class="container stats-grid">
-        <div class="stat-item">
-          <div class="stat-item__prefix">Más de</div>
-          <div class="stat-item__number" data-counter="120" data-suffix="+">120+</div>
-          <div class="stat-item__label">Puntos y Canales de Distribución</div>
+    <section class="section section--light" id="estilo-de-vida">
+      <div class="container lifestyle-split">
+        <div class="lifestyle-visual reveal">
+          <img src="assets/freedom-lifestyle.jpg" alt="Pareja disfrutando de tiempo libre, naturaleza y trabajo remoto con tranquilidad" />
         </div>
-        <div class="stat-item">
-          <div class="stat-item__prefix">Más de</div>
-          <div class="stat-item__number" data-counter="1850000" data-suffix="+">1,850,000+</div>
-          <div class="stat-item__label">Sachets Funcionales Consumidos</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-item__prefix">Comunidad en Expansión</div>
-          <div class="stat-item__number" data-counter="14500" data-suffix="+">14,500+</div>
-          <div class="stat-item__label">Distribuidores y Clientes Activos</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-item__prefix">Ecosistema Digital</div>
-          <div class="stat-item__number" data-counter="100" data-suffix="%">100%</div>
-          <div class="stat-item__label">Automatización de Pedidos y Comisiones</div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ======================================================================
-         Digital Ecosystem & Management Tools
-         ====================================================================== -->
-    <section class="section section--white" id="ecosistema">
-      <div class="container platform-showcase">
-        <div>
-          <span class="section-eyebrow">Innovación &amp; Herramientas Digitales</span>
-          <h2 class="section-title">Tu Negocio y Red Comercial en una Sola Plataforma</h2>
-          <p class="section-description">
-            NEXSUS GLOBAL se apoya en herramientas digitales de última generación para que administres clientes, distribuidores, pedidos, activaciones y comisiones desde cualquier dispositivo.
+        <div class="reveal">
+          <span class="section-eyebrow">Libertad y Estilo de Vida</span>
+          <h2 class="section-title">Diseña una vida con más posibilidades.</h2>
+          <p class="section-lead">
+            El verdadero crecimiento no se trata solamente de números. Se trata de crear nuevas posibilidades, desarrollar habilidades y construir un estilo de vida alineado con tus objetivos.
           </p>
 
-          <div class="platform-features" role="tablist" aria-label="Módulos de la plataforma digital">
-            <button type="button" class="platform-feature-btn is-active" data-module="0" id="module-btn-0">
-              <div class="platform-feature-btn__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              </div>
-              <div>
-                <div class="platform-feature-btn__title">Administración de Clientes y Red Multinivel</div>
-                <div class="platform-feature-btn__desc">Registra nuevos afiliados, visualiza tu genealogía en tiempo real y da seguimiento a tu equipo comercial.</div>
-              </div>
-            </button>
-
-            <button type="button" class="platform-feature-btn" data-module="1" id="module-btn-1">
-              <div class="platform-feature-btn__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-              </div>
-              <div>
-                <div class="platform-feature-btn__title">Gestión de Pedidos y Activaciones</div>
-                <div class="platform-feature-btn__desc">Realiza pedidos de LanzaTe, Alokate, MiNegro y MiCafé, y verifica tus puntos de activación al instante.</div>
-              </div>
-            </button>
-
-            <button type="button" class="platform-feature-btn" data-module="2" id="module-btn-2">
-              <div class="platform-feature-btn__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
-              </div>
-              <div>
-                <div class="platform-feature-btn__title">Control de Comisiones e Incentivos</div>
-                <div class="platform-feature-btn__desc">Consulta tus liquidaciones, bonos de patrocinio, avance de rango y estados de cuenta detallados.</div>
-              </div>
-            </button>
+          <div class="lifestyle-tags">
+            <span class="lifestyle-tag">Viajes y Experiencias</span>
+            <span class="lifestyle-tag">Tiempo Libre</span>
+            <span class="lifestyle-tag">Gestión Flexible</span>
+            <span class="lifestyle-tag">Bienestar Integral</span>
+            <span class="lifestyle-tag">Crecimiento Personal</span>
           </div>
 
-          <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg" id="platform-portal-cta">
-            Ingresar al Portal Nexsus Global
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+          <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg" id="lifestyle-cta-btn">
+            QUIERO CONOCER LA OPORTUNIDAD
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         9. SECCIÓN DE BENEFICIOS
+         ====================================================================== -->
+    <section class="section" id="beneficios">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Ecosistema de Valor</span>
+          <h2 class="section-title">Pilares diseñados para impulsar tu desarrollo</h2>
+          <p class="section-lead">
+            Combinamos acompañamiento humano, educación empresarial, productos funcionales y tecnología en un solo entorno profesional.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <!-- Bloque 1: Comunidad -->
+          <article class="benefit-card reveal">
+            <div class="benefit-card__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="7" r="4" />
+                <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                <path d="M21 21v-2a4 4 0 0 0-3-3.85" />
+              </svg>
+            </div>
+            <h3 class="benefit-card__title">Comunidad</h3>
+            <p class="benefit-card__desc">
+              Conecta con personas que comparten objetivos de crecimiento.
+            </p>
+          </article>
+
+          <!-- Bloque 2: Formación -->
+          <article class="benefit-card reveal">
+            <div class="benefit-card__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>
+            </div>
+            <h3 class="benefit-card__title">Formación</h3>
+            <p class="benefit-card__desc">
+              Desarrolla habilidades comerciales y empresariales.
+            </p>
+          </article>
+
+          <!-- Bloque 3: Productos -->
+          <article class="benefit-card reveal">
+            <div class="benefit-card__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                <path d="M3 6h18" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
+              </svg>
+            </div>
+            <h3 class="benefit-card__title">Productos</h3>
+            <p class="benefit-card__desc">
+              Accede a un portafolio de productos de bienestar.
+            </p>
+          </article>
+
+          <!-- Bloque 4: Plataforma -->
+          <article class="benefit-card reveal">
+            <div class="benefit-card__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="18" height="12" x="3" y="4" rx="2" ry="2" />
+                <line x1="2" x2="22" y1="20" y2="20" />
+              </svg>
+            </div>
+            <h3 class="benefit-card__title">Plataforma</h3>
+            <p class="benefit-card__desc">
+              Gestiona tu actividad desde nuestra Oficina Virtual.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         10. SECCIÓN OFICINA VIRTUAL
+         ====================================================================== -->
+    <section class="section section--dark" id="oficina-virtual">
+      <div class="container virtual-office-layout">
+        <div class="reveal">
+          <span class="section-eyebrow">Tecnología &amp; Gestión SaaS</span>
+          <h2 class="section-title">Todo tu negocio en un solo lugar.</h2>
+          <p class="section-lead">
+            Gestiona tu actividad, consulta información y administra tu negocio desde nuestra Oficina Virtual.
+          </p>
+
+          <div class="module-pills" role="tablist" aria-label="Módulos de la Oficina Virtual">
+            <button type="button" class="module-pill is-active" data-office-tab="dashboard">Dashboard</button>
+            <button type="button" class="module-pill" data-office-tab="volumen">Volumen</button>
+            <button type="button" class="module-pill" data-office-tab="activaciones">Activaciones</button>
+            <button type="button" class="module-pill" data-office-tab="comisiones">Comisiones</button>
+            <button type="button" class="module-pill" data-office-tab="organizacion">Organización</button>
+            <button type="button" class="module-pill" data-office-tab="historial">Historial</button>
+            <button type="button" class="module-pill" data-office-tab="billetera">Billetera</button>
+            <button type="button" class="module-pill" data-office-tab="perfil">Perfil</button>
+          </div>
+
+          <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg" id="virtual-office-cta">
+            INGRESAR A OFICINA VIRTUAL
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
           </a>
         </div>
 
-        <!-- Interactive Portal Window Preview -->
-        <div class="portal-preview-window">
-          <div class="portal-preview-window__bar">
-            <div class="window-dots">
+        <!-- Interactive Dashboard Mockup -->
+        <div class="saas-mockup reveal">
+          <div class="saas-mockup__topbar">
+            <div class="saas-mockup__dots">
               <span></span><span></span><span></span>
             </div>
-            <div class="window-status">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
-              Oficina Virtual Nexsus · En Línea
-            </div>
+            <span class="saas-mockup__url">portal.nexsusglobal.com / oficina-virtual</span>
+            <span class="saas-mockup__status">
+              <span style="width:7px; height:7px; border-radius:50%; background:#34D399;"></span>
+              Conectado
+            </span>
           </div>
 
-          <div class="portal-preview-pane" id="portal-preview-pane">
-            <div class="portal-preview-pane__header">
-              <div>
-                <div style="font-size:0.75rem; color:var(--text-muted-dark); text-transform:uppercase; letter-spacing:0.08em;">Módulo Activo</div>
-                <div class="portal-preview-pane__title" id="portal-pane-title">Red de Distribuidores &amp; Afiliación</div>
-              </div>
-              <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="padding:0.5rem 1rem; font-size:0.8125rem;">
-                Abrir Sistema
-              </a>
-            </div>
+          <div class="saas-mockup__body">
+            <aside class="saas-sidebar" aria-label="Menú lateral del mockup">
+              <button type="button" class="saas-nav-item is-active" data-office-tab="dashboard">Dashboard</button>
+              <button type="button" class="saas-nav-item" data-office-tab="volumen">Volumen</button>
+              <button type="button" class="saas-nav-item" data-office-tab="activaciones">Activaciones</button>
+              <button type="button" class="saas-nav-item" data-office-tab="comisiones">Comisiones</button>
+              <button type="button" class="saas-nav-item" data-office-tab="organizacion">Organización</button>
+              <button type="button" class="saas-nav-item" data-office-tab="historial">Historial</button>
+              <button type="button" class="saas-nav-item" data-office-tab="billetera">Billetera</button>
+              <button type="button" class="saas-nav-item" data-office-tab="perfil">Perfil</button>
+            </aside>
 
-            <div class="portal-preview-pane__kpis">
-              <div class="portal-kpi">
-                <div class="portal-kpi__label" id="kpi-1-label">Estado de Cuenta</div>
-                <div class="portal-kpi__val" id="kpi-1-val" style="color:#4cd99c;">Activo · 100%</div>
+            <div class="saas-main">
+              <div class="saas-main__header">
+                <div>
+                  <div style="font-size:0.72rem; color:var(--text-inverse-muted); text-transform:uppercase; letter-spacing:0.08em;">Panel Corporativo Nexsus</div>
+                  <h3 class="saas-main__title" id="saas-panel-title">Dashboard · Resumen General</h3>
+                </div>
+                <span class="saas-main__badge" id="saas-panel-badge">Período Activo</span>
               </div>
-              <div class="portal-kpi">
-                <div class="portal-kpi__label" id="kpi-2-label">Socios Directos</div>
-                <div class="portal-kpi__val" id="kpi-2-val">24 Afiliados</div>
-              </div>
-              <div class="portal-kpi">
-                <div class="portal-kpi__label" id="kpi-3-label">Volumen Grupal</div>
-                <div class="portal-kpi__val" id="kpi-3-val">4,850 PTS</div>
-              </div>
-            </div>
 
-            <div class="portal-activity-list" id="portal-activity-list">
-              <div class="portal-activity-row">
-                <span>Nueva afiliación registrada · Nivel 1</span>
-                <span class="portal-activity-row__status">Completado</span>
+              <div class="saas-kpi-grid">
+                <div class="saas-kpi-card">
+                  <div class="saas-kpi-card__label" id="saas-kpi-1-label">Estado de Cuenta</div>
+                  <div class="saas-kpi-card__val" id="saas-kpi-1-val">Activo</div>
+                </div>
+                <div class="saas-kpi-card">
+                  <div class="saas-kpi-card__label" id="saas-kpi-2-label">Volumen Personal</div>
+                  <div class="saas-kpi-card__val" id="saas-kpi-2-val">240 PV</div>
+                </div>
+                <div class="saas-kpi-card">
+                  <div class="saas-kpi-card__label" id="saas-kpi-3-label">Volumen Grupal</div>
+                  <div class="saas-kpi-card__val" id="saas-kpi-3-val">3,450 GV</div>
+                </div>
+                <div class="saas-kpi-card">
+                  <div class="saas-kpi-card__label" id="saas-kpi-4-label">Organización</div>
+                  <div class="saas-kpi-card__val" id="saas-kpi-4-val">28 Socios</div>
+                </div>
               </div>
-              <div class="portal-activity-row">
-                <span>Activación mensual Pack Bienestar (LanzaTe + Alokate)</span>
-                <span class="portal-activity-row__status">Acreditado</span>
-              </div>
-              <div class="portal-activity-row">
-                <span>Bono de expansión multinivel liquidado</span>
-                <span class="portal-activity-row__status">Disponible</span>
-              </div>
-            </div>
 
-            <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.8125rem; color:var(--text-muted-dark);">
-              <span>Acceso directo para registro y login de distribuidores</span>
-              <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" style="color:#f482d4; font-weight:700;">Ir a la plataforma →</a>
+              <div class="saas-table" id="saas-activity-rows">
+                <div class="saas-table__row">
+                  <span>Activación de pedido · Portafolio Bienestar (Micafé + Lanzate)</span>
+                  <span class="saas-table__tag">Verificado</span>
+                </div>
+                <div class="saas-table__row">
+                  <span>Nuevo registro en Organización · Línea Directa</span>
+                  <span class="saas-table__tag">Completado</span>
+                </div>
+                <div class="saas-table__row">
+                  <span>Actualización de estado en Billetera y Comisiones</span>
+                  <span class="saas-table__tag">Sincronizado</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -689,54 +622,61 @@
     </section>
 
     <!-- ======================================================================
-         Historias que Inspiran (Kromasol-style Distributor Testimonials)
+         11. TESTIMONIOS ("Historias de nuestra comunidad" — Demostrativo Editable)
          ====================================================================== -->
-    <section class="section" id="historias">
+    <section class="section" id="testimonios">
       <div class="container">
-        <div class="section-header">
-          <span class="section-eyebrow">Historias que Inspiran</span>
-          <h2 class="section-title">Líderes que Transforman Vidas con NEXSUS GLOBAL</h2>
-          <p class="section-description">
-            Conoce la experiencia de quienes ya disfrutan los beneficios nutricionales de nuestros productos y desarrollan su negocio independiente.
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Comunidad Nexsus</span>
+          <h2 class="section-title">Historias de nuestra comunidad</h2>
+          <p class="section-lead">
+            Experiencias enfocadas en bienestar, aprendizaje continuo y desarrollo dentro de nuestra red empresarial.
           </p>
+          <span class="testimonials-note">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            Espacio demostrativo editable para testimonios oficiales de la comunidad
+          </span>
         </div>
 
-        <div class="stories-grid">
-          <article class="story-card">
-            <p class="story-card__quote">
-              "Empecé consumiendo LanzaTe y MiCafé por bienestar personal. Los resultados fueron tan rápidos que mis amigos comenzaron a pedirme cajas todas las semanas. Hoy lidero una organización sólida gracias al sistema digital de Nexsus Global."
+        <div class="testimonials-grid">
+          <!-- Testimonio Demostrativo 1 -->
+          <article class="testimonial-card reveal">
+            <p class="testimonial-card__quote">
+              "[Espacio editable para testimonio] — Integrar los productos de Nexsus Global en mi rutina diaria y contar con herramientas digitales claras me ha permitido emprender de manera organizada y profesional."
             </p>
-            <div class="story-card__author">
-              <div class="story-card__avatar">MC</div>
+            <div class="testimonial-card__person">
+              <img src="assets/testimonial-1.jpg" alt="Miembro de la comunidad Nexsus Global" class="testimonial-card__avatar" />
               <div>
-                <div class="story-card__name">Mariana Mendoza</div>
-                <div class="story-card__role">Distribuidora Independiente · Rango Diamante</div>
+                <h3 class="testimonial-card__name">Valeria Salazar (Editable)</h3>
+                <div class="testimonial-card__location">Lima, Perú · Miembro de la Comunidad</div>
               </div>
             </div>
           </article>
 
-          <article class="story-card">
-            <p class="story-card__quote">
-              "ALOKATE cambió por completo mi energía en los entrenamientos gracias a su combinación de maca negra y camu camu. Además, poder registrar clientes y controlar mis comisiones en línea hace que el negocio sea 100% transparente."
+          <!-- Testimonio Demostrativo 2 -->
+          <article class="testimonial-card reveal">
+            <p class="testimonial-card__quote">
+              "[Espacio editable para testimonio] — Lo que más valoro de Nexsus Global es la formación comercial y el enfoque genuino en el bienestar. La Oficina Virtual facilita todo el seguimiento de mi organización."
             </p>
-            <div class="story-card__author">
-              <div class="story-card__avatar">CR</div>
+            <div class="testimonial-card__person">
+              <img src="assets/testimonial-2.jpg" alt="Emprendedor de la comunidad Nexsus Global" class="testimonial-card__avatar" />
               <div>
-                <div class="story-card__name">Carlos Rivas</div>
-                <div class="story-card__role">Líder de Expansión Comercial</div>
+                <h3 class="testimonial-card__name">Rodrigo Paredes (Editable)</h3>
+                <div class="testimonial-card__location">Arequipa, Perú · Distribuidor Independiente</div>
               </div>
             </div>
           </article>
 
-          <article class="story-card">
-            <p class="story-card__quote">
-              "El sabor gourmet de MINEGRO con ganoderma y chaga enamora desde la primera taza. Es un producto de reconsumo diario que nos permite activar nuevos distribuidores cada semana con total confianza."
+          <!-- Testimonio Demostrativo 3 -->
+          <article class="testimonial-card reveal">
+            <p class="testimonial-card__quote">
+              "[Espacio editable para testimonio] — Compartir Micafé y Alokate con mi entorno ha sido una experiencia muy natural. Aquí encontré una comunidad que impulsa el crecimiento personal paso a paso."
             </p>
-            <div class="story-card__author">
-              <div class="story-card__avatar">LV</div>
+            <div class="testimonial-card__person">
+              <img src="assets/testimonial-3.jpg" alt="Integrante de la comunidad Nexsus Global" class="testimonial-card__avatar" />
               <div>
-                <div class="story-card__name">Lucía Valdivia</div>
-                <div class="story-card__role">Directora Regional · Red Nexsus</div>
+                <h3 class="testimonial-card__name">Camila Flores (Editable)</h3>
+                <div class="testimonial-card__location">Trujillo, Perú · Miembro de la Comunidad</div>
               </div>
             </div>
           </article>
@@ -745,23 +685,144 @@
     </section>
 
     <!-- ======================================================================
-         Final Conversion Banner
+         12. SECCIÓN FAQ (Preguntas Frecuentes — Acordeón)
          ====================================================================== -->
-    <section class="section" style="padding-top:1rem;">
+    <section class="section section--light" id="preguntas-frecuentes">
       <div class="container">
-        <div class="cta-banner">
-          <img src="assets/logo-white.png" alt="NEXSUS GLOBAL" class="cta-banner__logo" />
-          <h2 class="cta-banner__title">Cambia tu estilo de vida y sé parte de la familia NEXSUS GLOBAL</h2>
-          <p class="cta-banner__text">
-            Regístrate hoy como nuevo distribuidor o inicia sesión en tu oficina virtual para gestionar tus pedidos, activaciones, clientes y comisiones.
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Transparencia y Claridad</span>
+          <h2 class="section-title">Preguntas frecuentes</h2>
+          <p class="section-lead">
+            Resolvemos las consultas principales sobre nuestra empresa, portafolio de bienestar, Oficina Virtual y modelo de distribución.
           </p>
-          <div class="cta-banner__actions">
-            <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg" id="bottom-register-cta">
-              Registrarse / Iniciar Sesión Ahora
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </div>
+
+        <div class="faq-container reveal">
+          <!-- FAQ 1 -->
+          <div class="faq-item is-open">
+            <button type="button" class="faq-question" aria-expanded="true">
+              <span>¿Qué es Nexsus Global?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" style="max-height: 220px;">
+              <div class="faq-answer__inner">
+                Nexsus Global es una empresa dedicada a la comercialización y distribución de productos orientados al bienestar, alimentos y bebidas funcionales, desarrollando una comunidad de distribuidores independientes apoyada en herramientas digitales modernas.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>¿Cómo puedo registrarme?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Puedes registrarte en línea haciendo clic en cualquiera de los botones "Únete a Nexsus" o "Ingresar a Oficina Virtual", donde podrás crear tu cuenta de usuario o distribuidor independiente en pocos pasos.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>¿Qué productos ofrece Nexsus Global?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Nuestro portafolio inicial de bienestar está conformado por cuatro fórmulas funcionales en polvo en presentación de 30 sachets: <strong>Micafé</strong> (Equilibrio Perfecto), <strong>Minegro</strong> (Bienestar Intenso), <strong>Lanzate</strong> (Formulación Avanzada) y <strong>Alokate</strong> (Energizante Vital).
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>¿Cómo funciona la oportunidad de negocio?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Se basa en cuatro pasos claros: registrarte en la comunidad, conocer y consumir nuestro portafolio de bienestar, compartir los productos a través de la venta directa y desarrollar tu organización comercial con el respaldo de capacitaciones y nuestra plataforma digital.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>¿Qué es la Oficina Virtual?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Es la plataforma tecnológica de Nexsus Global desde donde cada distribuidor puede consultar su Dashboard, Volumen, Activaciones, Comisiones, Organización, Historial de pedidos, Billetera y Perfil en tiempo real.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>¿Cómo puedo realizar una compra?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Puedes adquirir nuestros productos directamente a través de la Oficina Virtual una vez registrado, o mediante el acompañamiento de un distribuidor independiente autorizado de Nexsus Global.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 7 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>¿Cómo puedo convertirme en distribuidor?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Solo necesitas completar tu registro en nuestro portal oficial y realizar tu primera activación conforme a los programas vigentes. Nuestro equipo de soporte y comunidad te guiarán en el proceso de inicio.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 8 -->
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>¿Dónde puedo contactar con Nexsus Global?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Puedes comunicarte con nuestro equipo de atención al cliente al teléfono y WhatsApp <strong>938 513 227</strong>, o a través de los canales oficiales detallados en la sección de Contacto al pie de esta página.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         13. CTA FINAL
+         ====================================================================== -->
+    <section class="section" aria-label="Llamado a la acción final">
+      <div class="container">
+        <div class="final-cta reveal">
+          <img src="assets/logo-white.png" alt="Nexsus Global" class="final-cta__logo" />
+          <h2 class="final-cta__title">El siguiente paso comienza contigo.</h2>
+          <p class="final-cta__text">
+            Conoce Nexsus Global, descubre nuestros productos y encuentra nuevas posibilidades para tu crecimiento.
+          </p>
+          <div class="final-cta__actions">
+            <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg" id="final-cta-join">
+              QUIERO UNIRME
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
-            <a href="#productos" class="btn btn--dark btn--lg" style="border:1px solid rgba(255,255,255,0.2);">
-              Ver Catálogo de Productos
+            <a href="https://wa.me/51938513227?text=Hola%20Nexsus%20Global,%20quisiera%20recibir%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="btn btn--ghost-dark btn--lg" id="final-cta-contact">
+              CONTACTAR CON NEXSUS
             </a>
           </div>
         </div>
@@ -770,77 +831,116 @@
   </main>
 
   <!-- ========================================================================
-       Footer
+       14. FOOTER CORPORATIVO COMPLETO
        ======================================================================== -->
-  <footer class="site-footer">
+  <footer class="site-footer" id="contacto">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-top">
+        <!-- Columna Marca -->
         <div>
-          <img src="assets/logo-white.png" alt="NEXSUS GLOBAL Logo" class="footer-brand__logo" />
+          <img src="assets/logo-white.png" alt="Nexsus Global Logo" class="footer-brand__logo" />
           <p class="footer-brand__desc">
-            <strong>NEXSUS GLOBAL</strong> es una empresa dedicada a la comercialización y distribución de productos de consumo, alimentos, bebidas y productos orientados al bienestar y nutrición mediante canales de venta directa y marketing multinivel.
+            Empresa dedicada a la distribución de productos de bienestar y desarrollo de una comunidad de emprendedores mediante herramientas digitales modernas.
           </p>
+          <div class="footer-socials" aria-label="Redes sociales editables">
+            <a href="#contacto" class="footer-social-link" aria-label="Instagram Nexsus Global">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="#contacto" class="footer-social-link" aria-label="Facebook Nexsus Global">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://wa.me/51938513227" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="WhatsApp Nexsus Global">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </div>
         </div>
 
+        <!-- Columna 1: Nexsus Global -->
         <div>
-          <h3 class="footer-col__title">Nuestros Productos</h3>
+          <h3 class="footer-col__title">Nexsus Global</h3>
           <ul class="footer-links">
-            <li><a href="#productos">LanzaTe · Formulación Avanzada</a></li>
-            <li><a href="#productos">ALOKATE · Energizante Vital</a></li>
-            <li><a href="#productos">MINEGRO · Bienestar Intenso</a></li>
-            <li><a href="#productos">MICAFÉ · Equilibrio Perfecto</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#oportunidad">Oportunidad</a></li>
+            <li><a href="#contacto">Contacto</a></li>
           </ul>
         </div>
 
+        <!-- Columna 2: Soporte -->
         <div>
-          <h3 class="footer-col__title">Red Comercial</h3>
+          <h3 class="footer-col__title">Soporte</h3>
           <ul class="footer-links">
-            <li><a href="#negocio">Plan de Compensación</a></li>
-            <li><a href="#simulador-red">Simulador de Comisiones</a></li>
-            <li><a href="#ecosistema">Herramientas Digitales</a></li>
-            <li><a href="#historias">Historias de Éxito</a></li>
+            <li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
+            <li><a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer">Oficina Virtual</a></li>
+            <li><a href="https://wa.me/51938513227" target="_blank" rel="noopener noreferrer">Atención al cliente</a></li>
           </ul>
         </div>
 
+        <!-- Columna 3: Legal -->
         <div>
-          <h3 class="footer-col__title">Acceso Distribuidores</h3>
+          <h3 class="footer-col__title">Legal</h3>
           <ul class="footer-links">
-            <li>
-              <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" style="color:#f482d4; font-weight:700;">
-                Portal de Registro e Inicio de Sesión →
-              </a>
-            </li>
-            <li><a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer">Administración de Pedidos</a></li>
-            <li><a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer">Activaciones y Comisiones</a></li>
+            <li><a href="#contacto">Términos y condiciones</a></li>
+            <li><a href="#contacto">Política de privacidad</a></li>
+            <li><a href="#contacto">Política de cookies</a></li>
+            <li><a href="#contacto">Libro de reclamaciones</a></li>
           </ul>
+        </div>
+
+        <!-- Columna 4: Contacto -->
+        <div>
+          <h3 class="footer-col__title">Contacto</h3>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div>
+                <strong>Teléfono &amp; WhatsApp</strong>
+                <a href="tel:+51938513227">938 513 227</a>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <div>
+                <strong>Email (Editable)</strong>
+                <span>contacto@nexsusglobal.com</span>
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <strong>Dirección (Editable)</strong>
+                <span>Lima, Perú · Operaciones Nacionales</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <span>&copy; 2026 NEXSUS GLOBAL. Todos los derechos reservados.</span>
-        <span>Bienestar · Nutrición Funcional · Red de Distribuidores Independientes</span>
+        <span>&copy; 2026 Nexsus Global. Todos los derechos reservados.</span>
+        <span>Bienestar · Comunidad · Oportunidad de Emprendimiento</span>
       </div>
     </div>
   </footer>
 
   <!-- ========================================================================
-       Product Technical Sheet Modal
+       Modal de Detalle de Producto
        ======================================================================== -->
-  <div class="modal-backdrop" id="product-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-backdrop" id="product-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-product-name">
     <div class="product-modal">
-      <button type="button" class="product-modal__close" id="modal-close-btn" aria-label="Cerrar ficha técnica">✕</button>
-      <div class="product-modal__visual" id="modal-visual-bg">
-        <img src="assets/mockup_lanzate_bolsa.png" alt="Producto Nexsus Global" id="modal-img" />
+      <button type="button" class="product-modal__close" id="modal-close-btn" aria-label="Cerrar ventana">✕</button>
+      <div class="product-modal__stage">
+        <img src="assets/mockup_micafe_bolsa.png" alt="Producto Nexsus Global" id="modal-product-img" />
       </div>
-      <div class="product-modal__content">
-        <span class="section-eyebrow" id="modal-subtitle">Formulación Avanzada</span>
-        <h3 class="section-title" style="font-size:1.85rem; margin-bottom:0.5rem;" id="modal-title">LanzaTe</h3>
-        <p style="font-size:0.9375rem; color:var(--text-secondary);" id="modal-desc"></p>
+      <div class="product-modal__body">
+        <span class="section-eyebrow" id="modal-product-badge">Equilibrio Perfecto</span>
+        <h3 class="section-title" style="font-size:1.75rem; margin-bottom:0.5rem;" id="modal-product-name">Micafé</h3>
+        <p style="font-size:0.9375rem; color:var(--text-secondary);" id="modal-product-desc"></p>
 
-        <div class="product-modal__list" id="modal-details"></div>
+        <div class="product-modal__meta" id="modal-product-meta"></div>
 
         <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="width:100%;">
-          Solicitar o Distribuir en el Portal
+          Adquirir en Oficina Virtual
         </a>
       </div>
     </div>
