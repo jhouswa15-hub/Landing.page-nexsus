@@ -94,9 +94,26 @@
 
   <main>
     <!-- ======================================================================
-         3. HERO PRINCIPAL + DXN MULTI-SLIDE INTERACTIVE STORYBOARD
+         3. HERO PRINCIPAL + CARRUSEL DE 3 VIDEOS DE FONDO Y ESCENARIO + JITTER MOTION
          ====================================================================== -->
     <section class="hero" id="inicio">
+      <!-- Full-Bleed Ambient Video Background Carousel -->
+      <div class="hero__bg-carousel" aria-hidden="true">
+        <video class="hero__bg-video is-active" data-hero-bg-video="0" poster="assets/hero-poster-1.jpg" autoplay muted loop playsinline preload="auto">
+          <source src="assets/hero-video-1.webm" type="video/webm" />
+          <source src="assets/hero-video-1.mp4" type="video/mp4" />
+        </video>
+        <video class="hero__bg-video" data-hero-bg-video="1" poster="assets/hero-poster-2.jpg" muted loop playsinline preload="metadata">
+          <source src="assets/hero-video-2.webm" type="video/webm" />
+          <source src="assets/hero-video-2.mp4" type="video/mp4" />
+        </video>
+        <video class="hero__bg-video" data-hero-bg-video="2" poster="assets/hero-poster-3.jpg" muted loop playsinline preload="metadata">
+          <source src="assets/hero-video-3.webm" type="video/webm" />
+          <source src="assets/hero-video-3.mp4" type="video/mp4" />
+        </video>
+        <div class="hero__bg-overlay"></div>
+      </div>
+
       <div class="container hero__grid">
         <div class="hero__content reveal is-visible">
           <div class="hero__brand-mark">
@@ -104,11 +121,20 @@
             <span class="hero__brand-origin">Un Mundo · Un Mercado · Perú</span>
           </div>
 
-          <!-- DXN-Inspired 3-Slide Switcher -->
-          <div class="hero__slide-tabs" role="tablist" aria-label="Pilares principales Nexsus Global">
-            <button type="button" class="hero-slide-tab is-active" data-hero-slide="0" id="hero-tab-0">01 · Un Mundo, Un Mercado</button>
-            <button type="button" class="hero-slide-tab" data-hero-slide="1" id="hero-tab-1">02 · Comunidad Global</button>
-            <button type="button" class="hero-slide-tab" data-hero-slide="2" id="hero-tab-2">03 · Ganoderma &amp; Superalimentos</button>
+          <!-- Jitter-Inspired Progress & Slide Tabs -->
+          <div class="hero__slide-tabs" role="tablist" aria-label="Carrusel de videos Nexsus Global">
+            <button type="button" class="hero-slide-tab is-active" data-hero-slide="0" id="hero-tab-0">
+              <span>01 · Un Mundo, Un Mercado</span>
+              <span class="hero-slide-tab__progress" data-hero-progress="0"></span>
+            </button>
+            <button type="button" class="hero-slide-tab" data-hero-slide="1" id="hero-tab-1">
+              <span>02 · Comunidad Global</span>
+              <span class="hero-slide-tab__progress" data-hero-progress="1"></span>
+            </button>
+            <button type="button" class="hero-slide-tab" data-hero-slide="2" id="hero-tab-2">
+              <span>03 · Ganoderma &amp; Superalimentos</span>
+              <span class="hero-slide-tab__progress" data-hero-progress="2"></span>
+            </button>
           </div>
 
           <h1 class="hero__title" id="hero-main-headline">
@@ -120,11 +146,11 @@
           </p>
 
           <div class="hero__actions">
-            <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg" id="hero-cta-join">
+            <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg jitter-ripple-btn" id="hero-cta-join">
               QUIERO SER PARTE
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
-            <a href="#nosotros" class="btn btn--secondary btn--lg" id="hero-cta-discover">
+            <a href="#nosotros" class="btn btn--secondary btn--lg jitter-ripple-btn" id="hero-cta-discover">
               CONOCE NEXSUS GLOBAL
             </a>
           </div>
@@ -145,10 +171,49 @@
           </div>
         </div>
 
+        <!-- Hero Right Interactive 3-Video Carousel Stage (Jitter Image Stretch Transition) -->
         <div class="hero__visual reveal is-visible">
-          <div class="hero__image-frame hf-stage-ground">
-            <img src="assets/hero-lifestyle.jpg" alt="Comunidad de emprendedores Nexsus Global colaborando en un entorno moderno" id="hero-stage-image" class="hf-seam-target" />
+          <div class="hero__video-carousel" id="hero-video-carousel">
+            <div class="hero__video-hud">
+              <span class="hero__video-badge" id="hero-video-badge">
+                <span style="width:7px; height:7px; border-radius:50%; background:#EA64D8;"></span>
+                <span id="hero-video-badge-label">01 / 03 · Origen Perú &amp; Visión Global</span>
+              </span>
+              <div class="hero__video-controls">
+                <button type="button" class="hero__video-ctrl-btn" id="hero-video-prev" aria-label="Video anterior">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <button type="button" class="hero__video-ctrl-btn" id="hero-video-next" aria-label="Siguiente video">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Video Slide 01: Origen Perú & Visión Global (Machu Picchu / Andes Cinematic) -->
+            <div class="hero__video-slide is-active" data-hero-video-slide="0">
+              <video class="hero__video-el" data-hero-fg-video="0" poster="assets/hero-poster-1.jpg" autoplay muted playsinline preload="auto">
+                <source src="assets/hero-video-1.webm" type="video/webm" />
+                <source src="assets/hero-video-1.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            <!-- Video Slide 02: Comunidad, Libertad y Bienestar (Sunset Beach Wellness) -->
+            <div class="hero__video-slide" data-hero-video-slide="1">
+              <video class="hero__video-el" data-hero-fg-video="1" poster="assets/hero-poster-2.jpg" muted playsinline preload="metadata">
+                <source src="assets/hero-video-2.webm" type="video/webm" />
+                <source src="assets/hero-video-2.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            <!-- Video Slide 03: Vitalidad, Energía y Superalimentos (35mm Athletic Performance) -->
+            <div class="hero__video-slide" data-hero-video-slide="2">
+              <video class="hero__video-el" data-hero-fg-video="2" poster="assets/hero-poster-3.jpg" muted playsinline preload="metadata">
+                <source src="assets/hero-video-3.webm" type="video/webm" />
+                <source src="assets/hero-video-3.mp4" type="video/mp4" />
+              </video>
+            </div>
           </div>
+
           <div class="hero__floating-card hf-seam-target" id="hero-floating-card">
             <div class="hero__floating-meta">
               <div class="hero__floating-icon">
@@ -164,6 +229,29 @@
         </div>
       </div>
     </section>
+
+    <!-- ======================================================================
+         JITTER.VIDEO REFERENCE STRIP: "THE TRACK: SHOWREEL & STRETCHED TYPE REPEATER"
+         ====================================================================== -->
+    <div class="jitter-showreel-strip" aria-label="Pilares dinámicos Nexsus Global">
+      <div class="jitter-showreel-track">
+        <span class="jitter-pill-item"><span class="jitter-pill-dot"></span>Micafé · Equilibrio Perfecto</span>
+        <span class="jitter-pill-item"><span class="jitter-pill-dot"></span>Minegro · Bienestar Intenso</span>
+        <span class="jitter-pill-item"><span class="jitter-pill-dot"></span>Lanzate · Formulación Avanzada</span>
+        <span class="jitter-pill-item"><span class="jitter-pill-dot"></span>Alokate · Energizante Vital</span>
+        <span class="jitter-pill-item"><span class="jitter-pill-dot"></span>Un Mundo, Un Mercado · Perú</span>
+        <span class="jitter-pill-item"><span class="jitter-pill-dot"></span>Nexsus eWorld · Oficina Virtual 24/7</span>
+        <span class="jitter-pill-item"><span class="jitter-pill-dot"></span>Ganoderma, Chaga &amp; Superalimentos</span>
+        <!-- Duplicated for seamless loop -->
+        <span class="jitter-pill-item" aria-hidden="true"><span class="jitter-pill-dot"></span>Micafé · Equilibrio Perfecto</span>
+        <span class="jitter-pill-item" aria-hidden="true"><span class="jitter-pill-dot"></span>Minegro · Bienestar Intenso</span>
+        <span class="jitter-pill-item" aria-hidden="true"><span class="jitter-pill-dot"></span>Lanzate · Formulación Avanzada</span>
+        <span class="jitter-pill-item" aria-hidden="true"><span class="jitter-pill-dot"></span>Alokate · Energizante Vital</span>
+        <span class="jitter-pill-item" aria-hidden="true"><span class="jitter-pill-dot"></span>Un Mundo, Un Mercado · Perú</span>
+        <span class="jitter-pill-item" aria-hidden="true"><span class="jitter-pill-dot"></span>Nexsus eWorld · Oficina Virtual 24/7</span>
+        <span class="jitter-pill-item" aria-hidden="true"><span class="jitter-pill-dot"></span>Ganoderma, Chaga &amp; Superalimentos</span>
+      </div>
+    </div>
 
     <!-- ======================================================================
          5. SECCIÓN "CONOCE NEXSUS GLOBAL" + FILOSOFÍA DXN "ONE WORLD ONE MARKET"

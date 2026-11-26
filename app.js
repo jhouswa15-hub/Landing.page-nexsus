@@ -17,23 +17,20 @@
 
 const HERO_SLIDES = [
   {
+    badgeLabel: '01 / 03 · Origen Perú & Visión Global',
     subtitle: 'Conecta con una comunidad global, descubre productos de bienestar y desarrolla una nueva forma de emprender.',
-    image: 'assets/hero-lifestyle.jpg',
-    alt: 'Comunidad de emprendedores Nexsus Global colaborando en un entorno moderno',
     floatTitle: 'Ecosistema Corporativo Nexsus',
     floatDesc: 'Bienestar, formación y tecnología bajo la visión Un Mundo, Un Mercado'
   },
   {
+    badgeLabel: '02 / 03 · Libertad, Bienestar y Comunidad',
     subtitle: 'Forma parte de una organización conectada mediante un único código digital en nuestra plataforma Nexsus eWorld, con soporte y expansión desde Perú.',
-    image: 'assets/corporate-center.jpg',
-    alt: 'Sede corporativa y centro de atención a distribuidores Nexsus Global',
     floatTitle: 'Red Comercial en Expansión',
     floatDesc: 'Centros de atención, logística nacional y Oficina Virtual disponible 24/7'
   },
   {
+    badgeLabel: '03 / 03 · Vitalidad, Energía & Superalimentos',
     subtitle: 'Fórmulas funcionales en polvo con hongos adaptógenos (Ganoderma y Chaga) y superalimentos peruanos de alta pureza para tu nutrición diaria.',
-    image: 'assets/natural-ingredients.jpg',
-    alt: 'Materias primas naturales: Ganoderma, Chaga, Cacao, Maca Negra y Café',
     floatTitle: '100% Materias Primas Naturales',
     floatDesc: 'Micafé, Minegro, Lanzate y Alokate en prácticos sachets individuales'
   }
@@ -239,7 +236,8 @@ const OFFICE_MODULES = {
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initWaterfallHeroHeadline();
-  initHeroSlides();
+  initHeroVideoCarousel();
+  initJitterRippleButtons();
   initPortfolioFilterTabs();
   initCuboidProductTilt();
   initProductModal();
@@ -295,53 +293,159 @@ function initWaterfallHeroHeadline() {
 }
 
 /* --------------------------------------------------------------------------
-   3. HyperFrames §3 Cut-The-Curve 3-Slide Hero Switcher
+   3. Hero 3-Video Carousel (Background + Foreground Stage + Jitter Stretch Transition)
    -------------------------------------------------------------------------- */
-function initHeroSlides() {
+function initHeroVideoCarousel() {
   const tabs = document.querySelectorAll('[data-hero-slide]');
+  const progressBars = document.querySelectorAll('[data-hero-progress]');
+  const bgVideos = document.querySelectorAll('[data-hero-bg-video]');
+  const fgSlides = document.querySelectorAll('[data-hero-video-slide]');
+  const fgVideos = document.querySelectorAll('[data-hero-fg-video]');
+
   const subtitleEl = document.getElementById('hero-dynamic-subtitle');
-  const imgEl = document.getElementById('hero-stage-image');
   const floatCardEl = document.getElementById('hero-floating-card');
   const floatTitleEl = document.getElementById('hero-float-title');
   const floatDescEl = document.getElementById('hero-float-desc');
+  const badgeLabelEl = document.getElementById('hero-video-badge-label');
+  const prevBtn = document.getElementById('hero-video-prev');
+  const nextBtn = document.getElementById('hero-video-next');
 
-  if (!tabs.length || !imgEl) return;
+  if (!tabs.length || !fgSlides.length) return;
 
   let currentIdx = 0;
+  let slideStartTime = performance.now();
+  const SLIDE_DURATION_MS = 6500;
+
+  function playSafe(videoEl) {
+    if (!videoEl) return;
+    videoEl.currentTime = 0;
+    const p = videoEl.play();
+    if (p && typeof p.catch === 'function') {
+      p.catch(() => {});
+    }
+  }
+
+  function switchToSlide(nextIdx) {
+    const targetIdx = (nextIdx + HERO_SLIDES.length) % HERO_SLIDES.length;
+    if (targetIdx === currentIdx) {
+      slideStartTime = performance.now();
+      return;
+    }
+
+    const prevIdx = currentIdx;
+    currentIdx = targetIdx;
+    slideStartTime = performance.now();
+    const slideData = HERO_SLIDES[currentIdx];
+
+    // 1. Update tabs & reset progress bars
+    tabs.forEach((t, i) => t.classList.toggle('is-active', i === currentIdx));
+    progressBars.forEach(bar => {
+      bar.style.width = '0%';
+    });
+
+    // 2. Switch Full-Section Ambient Background Video
+    bgVideos.forEach((vid, i) => {
+      if (i === currentIdx) {
+        vid.classList.add('is-active');
+        playSafe(vid);
+      } else {
+        vid.classList.remove('is-active');
+      }
+    });
+
+    // 3. Jitter "Image Stretch Transition" on Foreground Video Carousel
+    fgSlides.forEach((slideEl, i) => {
+      if (i === prevIdx) {
+        slideEl.classList.remove('is-active');
+        slideEl.classList.add('is-exiting');
+        setTimeout(() => slideEl.classList.remove('is-exiting'), 560);
+      } else if (i === currentIdx) {
+        slideEl.classList.remove('is-exiting');
+        slideEl.classList.add('is-active');
+      } else {
+        slideEl.classList.remove('is-active', 'is-exiting');
+      }
+    });
+
+    fgVideos.forEach((vid, i) => {
+      if (i === currentIdx) {
+        playSafe(vid);
+      } else {
+        vid.pause();
+      }
+    });
+
+    // 4. Cut-the-Curve velocity handoff on subtitle & floating card
+    [subtitleEl, floatCardEl].forEach(el => {
+      if (el) el.classList.add('is-cutting-out');
+    });
+
+    setTimeout(() => {
+      if (subtitleEl) subtitleEl.textContent = slideData.subtitle;
+      if (floatTitleEl) floatTitleEl.textContent = slideData.floatTitle;
+      if (floatDescEl) floatDescEl.textContent = slideData.floatDesc;
+      if (badgeLabelEl) badgeLabelEl.textContent = slideData.badgeLabel;
+
+      [subtitleEl, floatCardEl].forEach(el => {
+        if (!el) return;
+        el.classList.remove('is-cutting-out');
+        el.classList.add('is-cutting-in-prep');
+        void el.offsetWidth;
+        el.classList.remove('is-cutting-in-prep');
+      });
+    }, 160);
+  }
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const idx = parseInt(tab.getAttribute('data-hero-slide'), 10);
-      if (idx === currentIdx) return;
-      const slide = HERO_SLIDES[idx];
-      if (!slide) return;
-      currentIdx = idx;
+      switchToSlide(idx);
+    });
+  });
 
-      tabs.forEach(t => t.classList.remove('is-active'));
-      tab.classList.add('is-active');
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => switchToSlide(currentIdx - 1));
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => switchToSlide(currentIdx + 1));
+  }
 
-      // Phase 1: Accelerate out to the left (power4.in + 10px blur)
-      [subtitleEl, imgEl, floatCardEl].forEach(el => {
-        if (el) el.classList.add('is-cutting-out');
-      });
+  // Real-time progress ticker & auto-advance ("The Track: Session Complete")
+  function tickProgress(now) {
+    const elapsed = now - slideStartTime;
+    const pct = Math.min((elapsed / SLIDE_DURATION_MS) * 100, 100);
+    const activeBar = progressBars[currentIdx];
+    if (activeBar) {
+      activeBar.style.width = `${pct.toFixed(1)}%`;
+    }
+    if (elapsed >= SLIDE_DURATION_MS) {
+      switchToSlide(currentIdx + 1);
+    }
+    requestAnimationFrame(tickProgress);
+  }
 
-      setTimeout(() => {
-        // Phase 2: Mid-motion hard swap at peak velocity (+42px offset)
-        subtitleEl.textContent = slide.subtitle;
-        imgEl.src = slide.image;
-        imgEl.alt = slide.alt;
-        floatTitleEl.textContent = slide.floatTitle;
-        floatDescEl.textContent = slide.floatDesc;
+  playSafe(bgVideos[0]);
+  playSafe(fgVideos[0]);
+  requestAnimationFrame(tickProgress);
+}
 
-        [subtitleEl, imgEl, floatCardEl].forEach(el => {
-          if (!el) return;
-          el.classList.remove('is-cutting-out');
-          el.classList.add('is-cutting-in-prep');
-          void el.offsetWidth; // Force reflow at cut frame
-          // Phase 3: Decelerate in along same vector (power4.out)
-          el.classList.remove('is-cutting-in-prep');
-        });
-      }, 170);
+/* --------------------------------------------------------------------------
+   3b. Jitter "Ripple Effect" on CTA Buttons
+   -------------------------------------------------------------------------- */
+function initJitterRippleButtons() {
+  const btns = document.querySelectorAll('.jitter-ripple-btn');
+  btns.forEach(btn => {
+    btn.addEventListener('mouseenter', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const wave = document.createElement('span');
+      const size = Math.max(rect.width, rect.height);
+      wave.className = 'jitter-ripple-wave';
+      wave.style.width = `${size}px`;
+      wave.style.height = `${size}px`;
+      wave.style.left = `${e.clientX - rect.left - size / 2}px`;
+      wave.style.top = `${e.clientY - rect.top - size / 2}px`;
+      btn.appendChild(wave);
+      setTimeout(() => wave.remove(), 680);
     });
   });
 }
