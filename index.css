@@ -1,64 +1,88 @@
 /* ==========================================================================
-   NEXSUS GLOBAL — Official Corporate Design System (v3: DXN "One World One Market" Architecture)
-   Aesthetic: FinTech + SaaS + Global Wellness Corporation
+   NEXSUS GLOBAL — Official Corporate Design System
+   v4: HyperFrames Motion Doctrine + 18-Token Contract + DXN One World Architecture
    Primary Brand Accent: #B903A4
    ========================================================================== */
 
 :root {
-  /* Core Brand Accent */
-  --brand-primary: #B903A4;
+  /* ------------------------------------------------------------------------
+     1. HyperFrames 18-Token Theme Contract (themes/CONTRACT.md)
+     ------------------------------------------------------------------------ */
+  /* Palette (8 tokens) */
+  --bg: #FFFFFF;
+  --fg: #111113;
+  --muted: #686873;
+  --surface: #F7F7F8;
+  --border: #E4E4E7;
+  --brand: #B903A4;
+  --accent: #B903A4;
+  --accent-2: #EA64D8;
+
+  /* Type (3 tokens) */
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Shape & Spacing (4 tokens) */
+  --radius: 22px;
+  --space-1: 0.75rem;
+  --space-2: 1.5rem;
+  --space-3: 3rem;
+
+  /* Motion Doctrine Curves & Beats (3 tokens) */
+  --dur-beat: 0.48s;
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1); /* power4.out / expo.out feel */
+  --ease-emphasis: cubic-bezier(0.16, 1, 0.3, 1);  /* hyperframes snap arrival */
+  --ease-exit: cubic-bezier(0.7, 0, 0.84, 0);      /* power4.in velocity exit */
+
+  /* ------------------------------------------------------------------------
+     2. Extended Corporate Tokens & Seam-Craft Opaque Stage Ground
+     ------------------------------------------------------------------------ */
+  --canvas-deep: #0B0B0D;
+  --brand-primary: var(--brand);
   --brand-primary-hover: #960285;
   --brand-primary-active: #78016A;
   --brand-primary-soft: rgba(185, 3, 164, 0.08);
-  --brand-primary-border: rgba(185, 3, 164, 0.24);
+  --brand-primary-border: rgba(185, 3, 164, 0.25);
 
-  /* Neutral Corporate Surfaces */
-  --surface-white: #FFFFFF;
-  --surface-light: #F7F7F8;
+  --surface-white: var(--bg);
+  --surface-light: var(--surface);
   --surface-subtle: #EFEFF2;
   --surface-charcoal: #121215;
-  --surface-dark: #0B0B0D;
+  --surface-dark: var(--canvas-deep);
   --surface-dark-card: #18181C;
 
-  /* Typography Colors */
-  --text-main: #111113;
+  --text-main: var(--fg);
   --text-secondary: #52525B;
-  --text-muted: #71717A;
+  --text-muted: var(--muted);
   --text-inverse: #FFFFFF;
   --text-inverse-muted: #A1A1AA;
 
-  /* Borders & Dividers */
-  --border-light: #E4E4E7;
+  --border-light: var(--border);
   --border-subtle: rgba(17, 17, 19, 0.07);
   --border-dark: rgba(255, 255, 255, 0.1);
 
-  /* Typography Families */
-  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-
-  /* Shadows */
   --shadow-xs: 0 1px 2px rgba(17, 17, 19, 0.04);
   --shadow-sm: 0 4px 12px rgba(17, 17, 19, 0.05);
   --shadow-md: 0 12px 32px -4px rgba(17, 17, 19, 0.07), 0 4px 12px -2px rgba(17, 17, 19, 0.04);
   --shadow-lg: 0 24px 48px -12px rgba(17, 17, 19, 0.12);
-  --shadow-brand: 0 10px 24px -6px rgba(185, 3, 164, 0.35);
+  --shadow-brand: 0 10px 24px -6px rgba(185, 3, 164, 0.36);
 
-  /* Radii & Layout */
   --radius-sm: 8px;
   --radius-md: 14px;
-  --radius-lg: 22px;
+  --radius-lg: var(--radius);
   --radius-xl: 30px;
   --radius-pill: 9999px;
 
   --container-width: 1280px;
   --topbar-height: 38px;
   --header-height: 78px;
-  --transition-base: 0.25s cubic-bezier(0.22, 1, 0.36, 1);
-  --transition-smooth: 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-base: 0.25s var(--ease-standard);
+  --transition-smooth: var(--dur-beat) var(--ease-emphasis);
 }
 
 /* ==========================================================================
-   Reset & Base Mobile-First Setup
+   Reset & Base Mobile-First Setup + Seam-Craft Stage Ground
    ========================================================================== */
 
 *, *::before, *::after {
@@ -72,10 +96,11 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--canvas-deep);
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   background-color: var(--surface-white);
   color: var(--text-main);
   line-height: 1.6;
@@ -113,6 +138,85 @@ ul {
 }
 
 /* ==========================================================================
+   HyperFrames Cut-The-Curve & Rack-Focus Seam Physics
+   ========================================================================== */
+
+/* Seam stage container prevents white flash during mid-window cut */
+.hf-stage-ground {
+  background-color: var(--canvas-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cut-the-curve partial travel (~12% frame) & velocity-matched swap */
+.hf-seam-target {
+  will-change: transform, opacity, filter;
+  transition:
+    transform 0.36s var(--ease-emphasis),
+    opacity 0.28s linear,
+    filter 0.36s var(--ease-emphasis);
+}
+
+.hf-seam-target.is-cutting-out {
+  transform: translateX(-42px) scale(0.98);
+  opacity: 0.15;
+  filter: blur(10px);
+  transition:
+    transform 0.18s var(--ease-exit),
+    opacity 0.16s linear,
+    filter 0.18s var(--ease-exit);
+}
+
+.hf-seam-target.is-cutting-in-prep {
+  transform: translateX(42px) scale(0.98);
+  opacity: 0.15;
+  filter: blur(10px);
+  transition: none !important;
+}
+
+/* Rack-Focus Blur-Cut for same-surface state swaps (12px peak blur) */
+.hf-rack-focus {
+  will-change: transform, opacity, filter;
+  transition:
+    transform 0.42s var(--ease-emphasis),
+    opacity 0.28s linear,
+    filter 0.42s var(--ease-emphasis);
+}
+
+.hf-rack-focus.is-pulling-focus {
+  transform: scale(0.975);
+  opacity: 0.18;
+  filter: blur(12px);
+  transition:
+    transform 0.16s var(--ease-exit),
+    opacity 0.14s linear,
+    filter 0.16s var(--ease-exit);
+}
+
+/* Waterfall Entry (§6 In-Scene Arrival: Y from below, staggered wave) */
+.hf-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(22px);
+  animation: hfWaterfallArrive 0.56s var(--ease-emphasis) forwards;
+  animation-delay: calc(var(--w-idx, 0) * 0.055s);
+}
+
+@keyframes hfWaterfallArrive {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
    Buttons & Interactive Controls
    ========================================================================== */
 
@@ -133,7 +237,7 @@ ul {
 }
 
 .btn:active {
-  transform: translateY(0);
+  transform: scale(0.96);
 }
 
 .btn--primary {
@@ -427,7 +531,7 @@ ul {
 }
 
 /* ==========================================================================
-   3. Hero Principal + DXN-Inspired Multi-Slide Interactive Storyboard
+   3. Hero Principal + HyperFrames Cut-The-Curve Storyboard
    ========================================================================== */
 
 .hero {
@@ -471,7 +575,6 @@ ul {
   color: var(--brand-primary);
 }
 
-/* DXN-Style Hero Slide Tabs */
 .hero__slide-tabs {
   display: inline-flex;
   flex-wrap: wrap;
@@ -544,7 +647,7 @@ ul {
   margin-top: 0.15rem;
 }
 
-/* Hero Visual Composition */
+/* Hero Visual Composition with Seam-Craft Opaque Ground */
 .hero__visual {
   position: relative;
 }
@@ -555,7 +658,7 @@ ul {
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border-light);
-  background-color: var(--surface-charcoal);
+  background-color: var(--canvas-deep);
 }
 
 .hero__image-frame img {
@@ -563,7 +666,6 @@ ul {
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
 }
 
 .hero__floating-card {
@@ -581,6 +683,7 @@ ul {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  z-index: 3;
 }
 
 .hero__floating-meta {
@@ -655,7 +758,7 @@ ul {
 }
 
 .section--dark .section-eyebrow {
-  color: #EA64D8;
+  color: var(--accent-2);
 }
 
 .section-title {
@@ -734,7 +837,6 @@ ul {
   line-height: 1.65;
 }
 
-/* DXN-Inspired Philosophy Banner ("Un Mundo · Un Mercado · Una Visión") */
 .dxn-philosophy-box {
   background-color: var(--surface-charcoal);
   color: var(--text-inverse);
@@ -766,7 +868,7 @@ ul {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #EA64D8;
+  color: var(--accent-2);
   margin-bottom: 0.35rem;
 }
 
@@ -785,7 +887,7 @@ ul {
 }
 
 /* ==========================================================================
-   6. Sección de Productos + DXN-Inspired "Elevate Your Lifestyle" Filter Tabs
+   6. Sección de Productos + HyperFrames 3D Cuboid & Orbit Card Physics
    ========================================================================== */
 
 .dxn-category-tabs {
@@ -824,9 +926,11 @@ ul {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.75rem;
+  perspective: 1200px;
 }
 
 .product-card {
+  position: relative;
   background-color: var(--surface-white);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
@@ -835,13 +939,37 @@ ul {
   flex-direction: column;
   justify-content: space-between;
   box-shadow: var(--shadow-xs);
-  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-base);
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--ty, 0px));
+  transition:
+    transform 0.35s var(--ease-standard),
+    box-shadow var(--transition-smooth),
+    border-color var(--transition-base);
 }
 
 .product-card:hover {
-  transform: translateY(-6px);
+  --ty: -6px;
   box-shadow: var(--shadow-lg);
   border-color: var(--brand-primary-border);
+}
+
+/* HyperFrames Cuboid Glare Layer */
+.product-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--gx, 50%) var(--gy, 25%),
+    rgba(185, 3, 164, 0.07),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover::after {
+  opacity: 1;
 }
 
 .product-card__stage {
@@ -880,7 +1008,7 @@ ul {
 }
 
 .product-card:hover .product-card__img {
-  transform: scale(1.05);
+  transform: scale(1.06) translateZ(16px);
 }
 
 .product-card__content {
@@ -951,6 +1079,7 @@ ul {
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border-light);
+  background-color: var(--canvas-deep);
 }
 
 .botanical-visual img {
@@ -1071,7 +1200,7 @@ ul {
 }
 
 /* ==========================================================================
-   8. Sección "Libertad y Estilo de Vida" + DXN "Why Choose Us" Interactive Tabs
+   8. Sección "Libertad y Estilo de Vida" + DXN "Why Choose Us" Tabs
    ========================================================================== */
 
 .lifestyle-split {
@@ -1086,6 +1215,7 @@ ul {
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border-light);
+  background-color: var(--canvas-deep);
 }
 
 .lifestyle-visual img {
@@ -1193,7 +1323,7 @@ ul {
 }
 
 /* ==========================================================================
-   10. Sección Oficina Virtual (Interactive SaaS eWorld Dashboard Mockup)
+   10. Sección Oficina Virtual + HyperFrames Oversized Cursor & Caption Rail
    ========================================================================== */
 
 .virtual-office-layout {
@@ -1229,7 +1359,12 @@ ul {
   border-color: var(--brand-primary);
 }
 
+.module-pill.is-cursor-pressed {
+  transform: scale(0.92);
+}
+
 .saas-mockup {
+  position: relative;
   background-color: var(--surface-dark);
   border: 1px solid var(--border-dark);
   border-radius: var(--radius-xl);
@@ -1244,6 +1379,7 @@ ul {
   padding: 0.95rem 1.35rem;
   background-color: var(--surface-dark-card);
   border-bottom: 1px solid var(--border-dark);
+  gap: 0.75rem;
 }
 
 .saas-mockup__dots {
@@ -1261,21 +1397,35 @@ ul {
 .saas-mockup__url {
   font-size: 0.75rem;
   color: var(--text-inverse-muted);
-  font-family: monospace;
+  font-family: var(--font-mono);
 }
 
-.saas-mockup__status {
+.saas-tour-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #34D399;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+  background-color: rgba(185, 3, 164, 0.22);
+  border: 1px solid rgba(234, 100, 216, 0.4);
+  color: #F5A3E8;
+  transition: all var(--transition-base);
+}
+
+.saas-tour-btn:hover,
+.saas-tour-btn.is-running {
+  background-color: var(--brand-primary);
+  color: var(--text-inverse);
+  border-color: var(--brand-primary);
 }
 
 .saas-mockup__body {
   display: grid;
   grid-template-columns: 1fr;
+  position: relative;
 }
 
 .saas-sidebar {
@@ -1302,12 +1452,17 @@ ul {
 
 .saas-nav-item:hover,
 .saas-nav-item.is-active {
-  background-color: rgba(185, 3, 164, 0.18);
+  background-color: rgba(185, 3, 164, 0.22);
   color: var(--text-inverse);
 }
 
+.saas-nav-item.is-cursor-pressed {
+  transform: scale(0.93);
+}
+
 .saas-main {
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 3.75rem;
+  position: relative;
 }
 
 .saas-main__header {
@@ -1392,6 +1547,70 @@ ul {
   color: var(--text-inverse);
 }
 
+/* HyperFrames Oversized Cursor Protagonist (.agents/skills/oversized-cursor) */
+.hf-oversized-cursor {
+  position: absolute;
+  left: 52%;
+  top: 118%; /* Off-screen resting law */
+  width: 56px;
+  height: 56px;
+  z-index: 30;
+  pointer-events: none;
+  will-change: transform, left, top;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.48));
+  transform-origin: 21% 14%;
+  transition:
+    left 0.68s cubic-bezier(0.22, 1, 0.36, 1),
+    top 0.68s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.14s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hf-oversized-cursor.is-tapping {
+  transform: scale(0.82);
+}
+
+.hf-cursor-tag {
+  position: absolute;
+  left: 34px;
+  top: 28px;
+  background-color: var(--brand-primary);
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(185, 3, 164, 0.5);
+}
+
+/* HyperFrames Captions-Overlay Lower-Third Rail (.agents/skills/captions-overlay) */
+.hf-caption-rail {
+  position: absolute;
+  left: 50%;
+  bottom: 0.85rem;
+  transform: translateX(-50%);
+  z-index: 25;
+  background-color: rgba(11, 11, 13, 0.82);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 0.38rem 0.95rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.92);
+  white-space: nowrap;
+  max-width: 92%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+
+.hf-caption-rail strong {
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
 /* ==========================================================================
    DXN-Inspired Live Digit Counter + Regional Branches Directory
    ========================================================================== */
@@ -1434,7 +1653,6 @@ ul {
   border-color: var(--brand-primary);
 }
 
-/* Regional Hubs & Corporate Presence */
 .branches-layout {
   display: grid;
   grid-template-columns: 1fr;
@@ -1644,7 +1862,7 @@ ul {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: max-height 0.3s var(--ease-standard);
 }
 
 .faq-answer__inner {
@@ -1787,7 +2005,7 @@ ul {
 }
 
 .footer-contact-item svg {
-  color: #EA64D8;
+  color: var(--accent-2);
   flex-shrink: 0;
   margin-top: 0.2rem;
 }
@@ -1812,14 +2030,14 @@ ul {
 }
 
 /* ==========================================================================
-   Product Detail Modal
+   Product Detail Modal (Inverse Zoom-Through Arrival Physics)
    ========================================================================== */
 
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background-color: rgba(11, 11, 13, 0.72);
-  backdrop-filter: blur(6px);
+  background-color: rgba(11, 11, 13, 0.76);
+  backdrop-filter: blur(8px);
   z-index: 2000;
   display: none;
   align-items: center;
@@ -1842,6 +2060,20 @@ ul {
   display: grid;
   grid-template-columns: 1fr;
   position: relative;
+  animation: hfInverseZoomArrive 0.44s var(--ease-emphasis) forwards;
+}
+
+@keyframes hfInverseZoomArrive {
+  0% {
+    opacity: 0.15;
+    transform: scale(1.18);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
 }
 
 .product-modal__close {
@@ -1891,13 +2123,15 @@ ul {
 }
 
 /* ==========================================================================
-   16. Progressive Section Reveal Animation
+   16. Progressive Section Reveal Animation (HyperFrames Waterfall Wave)
    ========================================================================== */
 
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(20px);
+  transition:
+    opacity 0.56s var(--ease-emphasis),
+    transform 0.56s var(--ease-emphasis);
 }
 
 .reveal.is-visible {

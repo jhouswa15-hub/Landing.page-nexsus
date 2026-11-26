@@ -111,11 +111,11 @@
             <button type="button" class="hero-slide-tab" data-hero-slide="2" id="hero-tab-2">03 · Ganoderma &amp; Superalimentos</button>
           </div>
 
-          <h1 class="hero__title">
+          <h1 class="hero__title" id="hero-main-headline">
             Construye tu bienestar. Expande tus posibilidades.
           </h1>
 
-          <p class="hero__subtitle" id="hero-dynamic-subtitle">
+          <p class="hero__subtitle hf-seam-target" id="hero-dynamic-subtitle">
             Conecta con una comunidad global, descubre productos de bienestar y desarrolla una nueva forma de emprender.
           </p>
 
@@ -146,10 +146,10 @@
         </div>
 
         <div class="hero__visual reveal is-visible">
-          <div class="hero__image-frame">
-            <img src="assets/hero-lifestyle.jpg" alt="Comunidad de emprendedores Nexsus Global colaborando en un entorno moderno" id="hero-stage-image" />
+          <div class="hero__image-frame hf-stage-ground">
+            <img src="assets/hero-lifestyle.jpg" alt="Comunidad de emprendedores Nexsus Global colaborando en un entorno moderno" id="hero-stage-image" class="hf-seam-target" />
           </div>
-          <div class="hero__floating-card">
+          <div class="hero__floating-card hf-seam-target" id="hero-floating-card">
             <div class="hero__floating-meta">
               <div class="hero__floating-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
@@ -562,7 +562,7 @@
             <button type="button" class="why-tab-btn" data-why-tab="vision">Visión a Largo Plazo</button>
           </div>
 
-          <div class="why-tab-panel" id="why-tab-panel">
+          <div class="why-tab-panel hf-rack-focus" id="why-tab-panel">
             <h3 class="why-tab-panel__title" id="why-panel-title">Modelo Flexible de Comercialización y Red</h3>
             <p class="why-tab-panel__desc" id="why-panel-desc">
               Un sistema estructurado que combina distribución directa, programas de activación y bonificaciones por desarrollo de organización con total transparencia.
@@ -654,7 +654,7 @@
     </section>
 
     <!-- ======================================================================
-         10. SECCIÓN OFICINA VIRTUAL (Nexsus eWorld Platform)
+         10. SECCIÓN OFICINA VIRTUAL (Nexsus eWorld Platform + HyperFrames Oversized Cursor)
          ====================================================================== -->
     <section class="section section--dark" id="oficina-virtual">
       <div class="container virtual-office-layout">
@@ -682,32 +682,45 @@
           </a>
         </div>
 
-        <!-- Interactive Dashboard Mockup -->
-        <div class="saas-mockup reveal">
+        <!-- Interactive Dashboard Mockup with HyperFrames Oversized Cursor & Caption Rail -->
+        <div class="saas-mockup reveal" id="saas-mockup-window">
           <div class="saas-mockup__topbar">
             <div class="saas-mockup__dots">
               <span></span><span></span><span></span>
             </div>
             <span class="saas-mockup__url">eworld.nexsusglobal.com / oficina-virtual</span>
-            <span class="saas-mockup__status">
-              <span style="width:7px; height:7px; border-radius:50%; background:#34D399;"></span>
-              En Línea
-            </span>
+            <button type="button" class="saas-tour-btn" id="saas-tour-btn" aria-label="Iniciar recorrido guiado por cursor">
+              <span style="width:7px; height:7px; border-radius:50%; background:#EA64D8;"></span>
+              <span id="saas-tour-btn-label">Recorrido Guiado: Activo</span>
+            </button>
           </div>
 
           <div class="saas-mockup__body">
+            <!-- HyperFrames Oversized Cursor Protagonist -->
+            <div class="hf-oversized-cursor" id="hf-oversized-cursor" aria-hidden="true">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 3.5L18.5 11.2L12.1 13.1L15.1 19.6L12.4 20.8L9.4 14.3L5 18.2V3.5Z" fill="#1C1C1F" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              <span class="hf-cursor-tag">Nexsus eWorld</span>
+            </div>
+
+            <!-- HyperFrames Captions-Overlay Lower-Third Rail -->
+            <div class="hf-caption-rail" id="hf-caption-rail" aria-live="polite">
+              Vista en vivo: <strong>Dashboard General</strong> · Control de volumen, activaciones y organización.
+            </div>
+
             <aside class="saas-sidebar" aria-label="Menú lateral del mockup">
-              <button type="button" class="saas-nav-item is-active" data-office-tab="dashboard">Dashboard</button>
-              <button type="button" class="saas-nav-item" data-office-tab="volumen">Volumen</button>
-              <button type="button" class="saas-nav-item" data-office-tab="activaciones">Activaciones</button>
-              <button type="button" class="saas-nav-item" data-office-tab="comisiones">Comisiones</button>
-              <button type="button" class="saas-nav-item" data-office-tab="organizacion">Organización</button>
-              <button type="button" class="saas-nav-item" data-office-tab="historial">Historial</button>
-              <button type="button" class="saas-nav-item" data-office-tab="billetera">Billetera</button>
-              <button type="button" class="saas-nav-item" data-office-tab="perfil">Perfil</button>
+              <button type="button" class="saas-nav-item is-active" data-office-tab="dashboard" id="saas-nav-dashboard">Dashboard</button>
+              <button type="button" class="saas-nav-item" data-office-tab="volumen" id="saas-nav-volumen">Volumen</button>
+              <button type="button" class="saas-nav-item" data-office-tab="activaciones" id="saas-nav-activaciones">Activaciones</button>
+              <button type="button" class="saas-nav-item" data-office-tab="comisiones" id="saas-nav-comisiones">Comisiones</button>
+              <button type="button" class="saas-nav-item" data-office-tab="organizacion" id="saas-nav-organizacion">Organización</button>
+              <button type="button" class="saas-nav-item" data-office-tab="historial" id="saas-nav-historial">Historial</button>
+              <button type="button" class="saas-nav-item" data-office-tab="billetera" id="saas-nav-billetera">Billetera</button>
+              <button type="button" class="saas-nav-item" data-office-tab="perfil" id="saas-nav-perfil">Perfil</button>
             </aside>
 
-            <div class="saas-main">
+            <div class="saas-main hf-rack-focus" id="saas-main-stage">
               <div class="saas-main__header">
                 <div>
                   <div style="font-size:0.72rem; color:var(--text-inverse-muted); text-transform:uppercase; letter-spacing:0.08em;">Panel Corporativo Nexsus</div>

@@ -1,14 +1,18 @@
 /**
- * NEXSUS GLOBAL — Official Corporate Web Application Logic (v3: DXN "One World One Market" Structure)
+ * NEXSUS GLOBAL — Official Corporate Web Application Logic
+ * v4: Adapted with HyperFrames Skills (motion-doctrine, cut-the-curve, seam-craft,
+ *     oversized-cursor, captions-overlay, cuboid-carousel/orbit-card 3D physics)
+ *
  * Controls:
  * 1. Sticky Navbar scroll state & Mobile hamburger drawer
- * 2. DXN-Inspired 3-Slide Interactive Hero Switcher
- * 3. DXN-Inspired Lifestyle Benefit Product Filter Tabs
- * 4. Product Portfolio modal ("Conocer producto")
- * 5. DXN-Inspired "Why Choose Us" Interactive Tabs
- * 6. Oficina Virtual (Nexsus eWorld) interactive SaaS mockup tabs (8 modules)
- * 7. FAQ Accordion transitions
- * 8. Progressive Scroll Reveal animations
+ * 2. HyperFrames Waterfall Word Entry (§6 In-Scene Arrival)
+ * 3. Hero Storyboard with Cut-the-Curve velocity-matched transitions (§3 Cut the Curve)
+ * 4. Portfolio Filter Tabs + 3D Cuboid Tilt & Glare Physics (cuboid-carousel / orbit-card)
+ * 5. Product Detail Modal with Inverse Zoom-Through Arrival (§2 Inverse Zoom-Through)
+ * 6. "Why Choose Us" Tabs with DSLR Rack-Focus Blur-Cut (§5 Rack-Focus)
+ * 7. Oficina Virtual (Nexsus eWorld) with Oversized Cursor Protagonist + Lower-Third Caption Rail
+ * 8. FAQ Accordion transitions
+ * 9. Progressive Scroll Reveal wave animations
  */
 
 const HERO_SLIDES = [
@@ -97,6 +101,8 @@ const OFFICE_MODULES = {
   dashboard: {
     title: 'Dashboard · Resumen General',
     badge: 'Período Activo',
+    caption: 'Vista en vivo: <strong>Dashboard General</strong> · Control de volumen, activaciones y organización.',
+    cursorPos: { left: '14%', top: '18%' },
     kpis: [
       { label: 'Estado de Cuenta', val: 'Activo' },
       { label: 'Volumen Personal', val: '240 PV' },
@@ -112,6 +118,8 @@ const OFFICE_MODULES = {
   volumen: {
     title: 'Volumen · Indicadores de Red',
     badge: 'Cálculo en Tiempo Real',
+    caption: 'Módulo activo: <strong>Volumen de Red</strong> · Trazabilidad de puntos personales (PV) y grupales (GV).',
+    cursorPos: { left: '14%', top: '28%' },
     kpis: [
       { label: 'Puntos Personales', val: '240 PV' },
       { label: 'Volumen Grupal', val: '3,450 GV' },
@@ -127,6 +135,8 @@ const OFFICE_MODULES = {
   activaciones: {
     title: 'Activaciones · Control de Período',
     badge: 'Estado: Calificado',
+    caption: 'Módulo activo: <strong>Activaciones</strong> · Confirmación automática de compras y calificación mensual.',
+    cursorPos: { left: '14%', top: '38%' },
     kpis: [
       { label: 'Estatus Mensual', val: 'Calificado' },
       { label: 'Fecha de Activación', val: 'Día 04' },
@@ -142,6 +152,8 @@ const OFFICE_MODULES = {
   comisiones: {
     title: 'Comisiones · Liquidaciones y Bonos',
     badge: 'Transparencia Total',
+    caption: 'Módulo activo: <strong>Comisiones</strong> · Desglose transparente de bonos directos y de organización.',
+    cursorPos: { left: '14%', top: '48%' },
     kpis: [
       { label: 'Ciclo Actual', val: 'En Curso' },
       { label: 'Bonos Directos', val: 'Habilitados' },
@@ -157,6 +169,8 @@ const OFFICE_MODULES = {
   organizacion: {
     title: 'Organización · Estructura de Comunidad',
     badge: '28 Integrantes',
+    caption: 'Módulo activo: <strong>Organización</strong> · Visualización jerárquica de socios y retención comunitaria.',
+    cursorPos: { left: '14%', top: '58%' },
     kpis: [
       { label: 'Afiliados Directos', val: '9 Socios' },
       { label: 'Red Total', val: '28 Socios' },
@@ -172,6 +186,8 @@ const OFFICE_MODULES = {
   historial: {
     title: 'Historial · Registro de Pedidos y Actividad',
     badge: 'Trazabilidad 24/7',
+    caption: 'Módulo activo: <strong>Historial</strong> · Seguimiento logístico de órdenes y comprobantes digitales.',
+    cursorPos: { left: '14%', top: '68%' },
     kpis: [
       { label: 'Órdenes Totales', val: '19 Pedidos' },
       { label: 'Entregas Exitosas', val: '100%' },
@@ -187,6 +203,8 @@ const OFFICE_MODULES = {
   billetera: {
     title: 'Billetera · Gestión Financiera',
     badge: 'Seguridad Encriptada',
+    caption: 'Módulo activo: <strong>Billetera</strong> · Administración segura de saldos y transferencias a cuenta titular.',
+    cursorPos: { left: '14%', top: '78%' },
     kpis: [
       { label: 'Estado de Billetera', val: 'Verificada' },
       { label: 'Movimientos', val: 'Auditados' },
@@ -202,6 +220,8 @@ const OFFICE_MODULES = {
   perfil: {
     title: 'Perfil · Datos del Distribuidor',
     badge: 'Cuenta Verificada',
+    caption: 'Módulo activo: <strong>Perfil</strong> · Membresía única bajo la visión Un Mundo, Un Mercado.',
+    cursorPos: { left: '14%', top: '86%' },
     kpis: [
       { label: 'Código Nexsus', val: 'NX-PE-0842' },
       { label: 'País Base', val: 'Perú' },
@@ -218,11 +238,13 @@ const OFFICE_MODULES = {
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
+  initWaterfallHeroHeadline();
   initHeroSlides();
   initPortfolioFilterTabs();
+  initCuboidProductTilt();
   initProductModal();
   initWhyChooseTabs();
-  initVirtualOfficeMockup();
+  initVirtualOfficeWithOversizedCursor();
   initFaqAccordion();
   initScrollReveal();
 });
@@ -259,41 +281,72 @@ function initNavbar() {
 }
 
 /* --------------------------------------------------------------------------
-   2. DXN-Inspired 3-Slide Hero Switcher
+   2. HyperFrames §6 Waterfall Entry on Hero Headline
+   -------------------------------------------------------------------------- */
+function initWaterfallHeroHeadline() {
+  const h1 = document.getElementById('hero-main-headline');
+  if (!h1) return;
+  const text = h1.textContent.trim();
+  const words = text.split(/\s+/);
+  h1.innerHTML = words
+    .map((word, idx) => `<span class="hf-word" style="--w-idx:${idx}">${word}</span>`)
+    .join(' ');
+}
+
+/* --------------------------------------------------------------------------
+   3. HyperFrames §3 Cut-The-Curve 3-Slide Hero Switcher
    -------------------------------------------------------------------------- */
 function initHeroSlides() {
   const tabs = document.querySelectorAll('[data-hero-slide]');
   const subtitleEl = document.getElementById('hero-dynamic-subtitle');
   const imgEl = document.getElementById('hero-stage-image');
+  const floatCardEl = document.getElementById('hero-floating-card');
   const floatTitleEl = document.getElementById('hero-float-title');
   const floatDescEl = document.getElementById('hero-float-desc');
 
   if (!tabs.length || !imgEl) return;
 
+  let currentIdx = 0;
+
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       const idx = parseInt(tab.getAttribute('data-hero-slide'), 10);
+      if (idx === currentIdx) return;
       const slide = HERO_SLIDES[idx];
       if (!slide) return;
+      currentIdx = idx;
 
       tabs.forEach(t => t.classList.remove('is-active'));
       tab.classList.add('is-active');
 
-      imgEl.style.opacity = '0.35';
+      // Phase 1: Accelerate out to the left (power4.in + 10px blur)
+      [subtitleEl, imgEl, floatCardEl].forEach(el => {
+        if (el) el.classList.add('is-cutting-out');
+      });
+
       setTimeout(() => {
+        // Phase 2: Mid-motion hard swap at peak velocity (+42px offset)
         subtitleEl.textContent = slide.subtitle;
         imgEl.src = slide.image;
         imgEl.alt = slide.alt;
         floatTitleEl.textContent = slide.floatTitle;
         floatDescEl.textContent = slide.floatDesc;
-        imgEl.style.opacity = '1';
-      }, 160);
+
+        [subtitleEl, imgEl, floatCardEl].forEach(el => {
+          if (!el) return;
+          el.classList.remove('is-cutting-out');
+          el.classList.add('is-cutting-in-prep');
+          void el.offsetWidth; // Force reflow at cut frame
+          // Phase 3: Decelerate in along same vector (power4.out)
+          el.classList.remove('is-cutting-in-prep');
+        });
+      }, 170);
     });
   });
 }
 
 /* --------------------------------------------------------------------------
-   3. DXN-Inspired Lifestyle Benefit Product Filter Tabs
+   4. DXN-Inspired Lifestyle Benefit Product Filter Tabs
    -------------------------------------------------------------------------- */
 function initPortfolioFilterTabs() {
   const filterBtns = document.querySelectorAll('[data-portfolio-filter]');
@@ -318,7 +371,38 @@ function initPortfolioFilterTabs() {
 }
 
 /* --------------------------------------------------------------------------
-   4. Product Modal ("Conocer producto")
+   5. HyperFrames 3D Cuboid & Orbit Card Physics on Product Cards
+   -------------------------------------------------------------------------- */
+function initCuboidProductTilt() {
+  const cards = document.querySelectorAll('.product-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const nx = (x / rect.width) - 0.5;
+      const ny = (y / rect.height) - 0.5;
+
+      const rx = (-ny * 7).toFixed(2);
+      const ry = (nx * 9).toFixed(2);
+      const gx = ((x / rect.width) * 100).toFixed(1);
+      const gy = ((y / rect.height) * 100).toFixed(1);
+
+      card.style.setProperty('--rx', `${rx}deg`);
+      card.style.setProperty('--ry', `${ry}deg`);
+      card.style.setProperty('--gx', `${gx}%`);
+      card.style.setProperty('--gy', `${gy}%`);
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.setProperty('--rx', '0deg');
+      card.style.setProperty('--ry', '0deg');
+    });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   6. Product Modal ("Conocer producto")
    -------------------------------------------------------------------------- */
 function initProductModal() {
   const backdrop = document.getElementById('product-modal-backdrop');
@@ -367,10 +451,11 @@ function initProductModal() {
 }
 
 /* --------------------------------------------------------------------------
-   5. DXN-Inspired "Why Choose Us" Interactive Tabs
+   7. HyperFrames §5 Rack-Focus Blur-Cut on "Why Choose Us" Tabs
    -------------------------------------------------------------------------- */
 function initWhyChooseTabs() {
   const btns = document.querySelectorAll('[data-why-tab]');
+  const panelEl = document.getElementById('why-tab-panel');
   const titleEl = document.getElementById('why-panel-title');
   const descEl = document.getElementById('why-panel-desc');
 
@@ -383,59 +468,176 @@ function initWhyChooseTabs() {
       btns.forEach(b => b.classList.remove('is-active'));
       btn.classList.add('is-active');
 
-      titleEl.textContent = info.title;
-      descEl.textContent = info.desc;
+      if (panelEl) panelEl.classList.add('is-pulling-focus');
+      setTimeout(() => {
+        titleEl.textContent = info.title;
+        descEl.textContent = info.desc;
+        if (panelEl) panelEl.classList.remove('is-pulling-focus');
+      }, 140);
     });
   });
 }
 
 /* --------------------------------------------------------------------------
-   6. Interactive Oficina Virtual Mockup
+   8. HyperFrames Oversized Cursor Protagonist + Captions-Overlay Rail in Oficina Virtual
    -------------------------------------------------------------------------- */
-function initVirtualOfficeMockup() {
+function initVirtualOfficeWithOversizedCursor() {
   const triggers = document.querySelectorAll('[data-office-tab]');
+  const stageEl = document.getElementById('saas-main-stage');
   const titleEl = document.getElementById('saas-panel-title');
   const badgeEl = document.getElementById('saas-panel-badge');
   const rowsContainer = document.getElementById('saas-activity-rows');
+  const cursorEl = document.getElementById('hf-oversized-cursor');
+  const captionRailEl = document.getElementById('hf-caption-rail');
+  const tourBtn = document.getElementById('saas-tour-btn');
+  const tourLabel = document.getElementById('saas-tour-btn-label');
+  const mockupWindow = document.getElementById('saas-mockup-window');
+
+  const moduleKeys = Object.keys(OFFICE_MODULES);
+  let currentKey = 'dashboard';
+  let tourInterval = null;
+  let isTourActive = true;
+
+  function applyOfficeModule(tabKey, viaOversizedCursor = false) {
+    const mod = OFFICE_MODULES[tabKey];
+    if (!mod) return;
+    currentKey = tabKey;
+
+    if (viaOversizedCursor && cursorEl) {
+      // 1. Glide oversized cursor to target button center
+      cursorEl.style.left = mod.cursorPos.left;
+      cursorEl.style.top = mod.cursorPos.top;
+
+      // 2. Asymmetric 1:2 tap compress/expand on tip (21% 14%) & click ignites beat
+      setTimeout(() => {
+        cursorEl.classList.add('is-tapping');
+        const targetNav = document.getElementById(`saas-nav-${tabKey}`);
+        if (targetNav) targetNav.classList.add('is-cursor-pressed');
+
+        // Rack-focus blur-cut ignited same-frame by the click
+        if (stageEl) stageEl.classList.add('is-pulling-focus');
+
+        setTimeout(() => {
+          cursorEl.classList.remove('is-tapping');
+          if (targetNav) targetNav.classList.remove('is-cursor-pressed');
+          commitModuleContent(tabKey, mod);
+          if (stageEl) stageEl.classList.remove('is-pulling-focus');
+
+          // 3. Drift cursor aside during reading beat so it never sits frozen over text
+          setTimeout(() => {
+            if (cursorEl && isTourActive) {
+              cursorEl.style.left = '78%';
+              cursorEl.style.top = '22%';
+            }
+          }, 320);
+        }, 140);
+      }, 640);
+    } else {
+      if (stageEl) stageEl.classList.add('is-pulling-focus');
+      setTimeout(() => {
+        commitModuleContent(tabKey, mod);
+        if (stageEl) stageEl.classList.remove('is-pulling-focus');
+      }, 130);
+    }
+  }
+
+  function commitModuleContent(tabKey, mod) {
+    triggers.forEach(t => {
+      t.classList.toggle('is-active', t.getAttribute('data-office-tab') === tabKey);
+    });
+
+    titleEl.textContent = mod.title;
+    badgeEl.textContent = mod.badge;
+    if (captionRailEl) captionRailEl.innerHTML = mod.caption;
+
+    mod.kpis.forEach((kpi, idx) => {
+      const lEl = document.getElementById(`saas-kpi-${idx + 1}-label`);
+      const vEl = document.getElementById(`saas-kpi-${idx + 1}-val`);
+      if (lEl && vEl) {
+        lEl.textContent = kpi.label;
+        vEl.textContent = kpi.val;
+      }
+    });
+
+    rowsContainer.innerHTML = mod.rows
+      .map(
+        r => `
+      <div class="saas-table__row">
+        <span>${r.text}</span>
+        <span class="saas-table__tag">${r.tag}</span>
+      </div>
+    `
+      )
+      .join('');
+  }
+
+  function startCursorTour() {
+    if (tourInterval) clearInterval(tourInterval);
+    isTourActive = true;
+    if (tourBtn) tourBtn.classList.add('is-running');
+    if (tourLabel) tourLabel.textContent = 'Recorrido Guiado: Activo';
+
+    // Physical entry from off-screen bottom (top: 118% -> resting spot)
+    if (cursorEl) {
+      cursorEl.style.left = '78%';
+      cursorEl.style.top = '22%';
+    }
+
+    tourInterval = setInterval(() => {
+      const nextIdx = (moduleKeys.indexOf(currentKey) + 1) % moduleKeys.length;
+      applyOfficeModule(moduleKeys[nextIdx], true);
+    }, 3800);
+  }
+
+  function stopCursorTour() {
+    isTourActive = false;
+    if (tourInterval) clearInterval(tourInterval);
+    tourInterval = null;
+    if (tourBtn) tourBtn.classList.remove('is-running');
+    if (tourLabel) tourLabel.textContent = 'Iniciar Recorrido con Cursor';
+    // Physical exit off-screen below (never opacity fade in place)
+    if (cursorEl) {
+      cursorEl.style.left = '52%';
+      cursorEl.style.top = '118%';
+    }
+  }
 
   triggers.forEach(btn => {
     btn.addEventListener('click', () => {
+      stopCursorTour();
       const tabKey = btn.getAttribute('data-office-tab');
-      const mod = OFFICE_MODULES[tabKey];
-      if (!mod) return;
-
-      triggers.forEach(t => {
-        t.classList.toggle('is-active', t.getAttribute('data-office-tab') === tabKey);
-      });
-
-      titleEl.textContent = mod.title;
-      badgeEl.textContent = mod.badge;
-
-      mod.kpis.forEach((kpi, idx) => {
-        const lEl = document.getElementById(`saas-kpi-${idx + 1}-label`);
-        const vEl = document.getElementById(`saas-kpi-${idx + 1}-val`);
-        if (lEl && vEl) {
-          lEl.textContent = kpi.label;
-          vEl.textContent = kpi.val;
-        }
-      });
-
-      rowsContainer.innerHTML = mod.rows
-        .map(
-          r => `
-        <div class="saas-table__row">
-          <span>${r.text}</span>
-          <span class="saas-table__tag">${r.tag}</span>
-        </div>
-      `
-        )
-        .join('');
+      applyOfficeModule(tabKey, false);
     });
   });
+
+  if (tourBtn) {
+    tourBtn.addEventListener('click', () => {
+      if (isTourActive) {
+        stopCursorTour();
+      } else {
+        const nextIdx = (moduleKeys.indexOf(currentKey) + 1) % moduleKeys.length;
+        startCursorTour();
+        applyOfficeModule(moduleKeys[nextIdx], true);
+      }
+    });
+  }
+
+  // Trigger cursor entry when Oficina Virtual enters viewport
+  if (mockupWindow && 'IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startCursorTour();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.35 });
+    obs.observe(mockupWindow);
+  }
 }
 
 /* --------------------------------------------------------------------------
-   7. FAQ Accordion
+   9. FAQ Accordion
    -------------------------------------------------------------------------- */
 function initFaqAccordion() {
   const items = document.querySelectorAll('.faq-item');
@@ -463,7 +665,7 @@ function initFaqAccordion() {
 }
 
 /* --------------------------------------------------------------------------
-   8. Progressive Scroll Reveal
+   10. Progressive Scroll Reveal (HyperFrames Wave Cascade)
    -------------------------------------------------------------------------- */
 function initScrollReveal() {
   const elements = document.querySelectorAll('.reveal');
