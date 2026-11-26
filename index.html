@@ -13,6 +13,27 @@
 <body>
 
   <!-- ========================================================================
+       DXN-INSPIRED CORPORATE UTILITY BAR ("Un Mundo, Un Mercado")
+       ======================================================================== -->
+  <div class="corporate-topbar">
+    <div class="container corporate-topbar__inner">
+      <div class="corporate-topbar__left">
+        <span class="corporate-topbar__motto">
+          <span class="corporate-topbar__dot"></span>
+          NEXSUS GLOBAL · UN MUNDO, UN MERCADO
+        </span>
+        <span style="display:none;" class="topbar-sub-note">Comunidad Internacional de Bienestar y Emprendimiento</span>
+      </div>
+      <div class="corporate-topbar__right">
+        <span class="region-pill">Perú (Sede Principal) · ES</span>
+        <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="topbar-eworld-link" id="topbar-eworld-btn">
+          Nexsus eWorld (Oficina Virtual) →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
        4. BARRA DE NAVEGACIÓN
        ======================================================================== -->
   <header class="navbar" id="navbar">
@@ -73,21 +94,28 @@
 
   <main>
     <!-- ======================================================================
-         3. HERO PRINCIPAL
+         3. HERO PRINCIPAL + DXN MULTI-SLIDE INTERACTIVE STORYBOARD
          ====================================================================== -->
     <section class="hero" id="inicio">
       <div class="container hero__grid">
         <div class="hero__content reveal is-visible">
           <div class="hero__brand-mark">
             <img src="assets/logo-color.png" alt="Nexsus Global" />
-            <span class="hero__brand-origin">Perú · Visión Internacional</span>
+            <span class="hero__brand-origin">Un Mundo · Un Mercado · Perú</span>
+          </div>
+
+          <!-- DXN-Inspired 3-Slide Switcher -->
+          <div class="hero__slide-tabs" role="tablist" aria-label="Pilares principales Nexsus Global">
+            <button type="button" class="hero-slide-tab is-active" data-hero-slide="0" id="hero-tab-0">01 · Un Mundo, Un Mercado</button>
+            <button type="button" class="hero-slide-tab" data-hero-slide="1" id="hero-tab-1">02 · Comunidad Global</button>
+            <button type="button" class="hero-slide-tab" data-hero-slide="2" id="hero-tab-2">03 · Ganoderma &amp; Superalimentos</button>
           </div>
 
           <h1 class="hero__title">
             Construye tu bienestar. Expande tus posibilidades.
           </h1>
 
-          <p class="hero__subtitle">
+          <p class="hero__subtitle" id="hero-dynamic-subtitle">
             Conecta con una comunidad global, descubre productos de bienestar y desarrolla una nueva forma de emprender.
           </p>
 
@@ -103,23 +131,23 @@
 
           <div class="hero__pillars">
             <div>
-              <div class="hero__pillar-title">Bienestar Funcional</div>
-              <div class="hero__pillar-sub">Portafolio para tu estilo de vida diario</div>
+              <div class="hero__pillar-title">Membresía Única</div>
+              <div class="hero__pillar-sub">Filosofía Un Mundo, Un Mercado</div>
             </div>
             <div>
-              <div class="hero__pillar-title">Comunidad Activa</div>
-              <div class="hero__pillar-sub">Desarrollo empresarial y liderazgo</div>
+              <div class="hero__pillar-title">100% Funcional</div>
+              <div class="hero__pillar-sub">Ganoderma, Chaga y Superalimentos</div>
             </div>
             <div>
-              <div class="hero__pillar-title">Ecosistema Digital</div>
-              <div class="hero__pillar-sub">Gestión transparente en Oficina Virtual</div>
+              <div class="hero__pillar-title">Nexsus eWorld</div>
+              <div class="hero__pillar-sub">Gestión digital 24/7 en Oficina Virtual</div>
             </div>
           </div>
         </div>
 
         <div class="hero__visual reveal is-visible">
           <div class="hero__image-frame">
-            <img src="assets/hero-lifestyle.jpg" alt="Comunidad de emprendedores Nexsus Global colaborando en un entorno moderno" />
+            <img src="assets/hero-lifestyle.jpg" alt="Comunidad de emprendedores Nexsus Global colaborando en un entorno moderno" id="hero-stage-image" />
           </div>
           <div class="hero__floating-card">
             <div class="hero__floating-meta">
@@ -127,8 +155,8 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
               </div>
               <div>
-                <div class="hero__floating-title">Ecosistema Corporativo Nexsus</div>
-                <div class="hero__floating-desc">Bienestar, formación y tecnología para distribuidores independientes</div>
+                <div class="hero__floating-title" id="hero-float-title">Ecosistema Corporativo Nexsus</div>
+                <div class="hero__floating-desc" id="hero-float-desc">Bienestar, formación y tecnología para distribuidores independientes</div>
               </div>
             </div>
             <a href="#oficina-virtual" class="btn btn--secondary btn--sm">Ver Plataforma</a>
@@ -138,7 +166,7 @@
     </section>
 
     <!-- ======================================================================
-         5. SECCIÓN "CONOCE NEXSUS GLOBAL" (NOSOTROS)
+         5. SECCIÓN "CONOCE NEXSUS GLOBAL" + FILOSOFÍA DXN "ONE WORLD ONE MARKET"
          ====================================================================== -->
     <section class="section" id="nosotros">
       <div class="container">
@@ -195,25 +223,73 @@
             </p>
           </article>
         </div>
+
+        <!-- DXN-Inspired Philosophy Block ("One World, One Market, One Vision") -->
+        <div class="dxn-philosophy-box reveal">
+          <div>
+            <span class="section-eyebrow">Filosofía Corporativa Nexsus</span>
+            <h3 style="font-family:var(--font-display); font-size:1.75rem; font-weight:800; line-height:1.18; margin-bottom:0.75rem;">
+              Un Mundo, Un Mercado, Una Sola Visión
+            </h3>
+            <p style="font-size:0.95rem; color:var(--text-inverse-muted); line-height:1.65;">
+              Inspirados en los estándares internacionales de excelencia en venta directa, operamos bajo tres principios que garantizan calidad constante, simplicidad operativa y expansión sin fronteras desde Perú.
+            </p>
+          </div>
+
+          <div class="dxn-philosophy-concepts">
+            <div class="philosophy-concept-item">
+              <div class="philosophy-concept-item__tag">01 · Integración Total</div>
+              <div class="philosophy-concept-item__title">Calidad de Origen</div>
+              <p class="philosophy-concept-item__desc">
+                Selección rigurosa de materias primas funcionales, formulación estandarizada y distribución directa con control de calidad integral.
+              </p>
+            </div>
+
+            <div class="philosophy-concept-item">
+              <div class="philosophy-concept-item__tag">02 · Un Mundo, Un Mercado</div>
+              <div class="philosophy-concept-item__title">Membresía Unificada</div>
+              <p class="philosophy-concept-item__desc">
+                Cada distribuidor forma parte de una red conectada mediante un único código digital en nuestra Oficina Virtual para expandir su organización.
+              </p>
+            </div>
+
+            <div class="philosophy-concept-item">
+              <div class="philosophy-concept-item__tag">03 · Una Sola Visión</div>
+              <div class="philosophy-concept-item__title">Enfoque y Transparencia</div>
+              <p class="philosophy-concept-item__desc">
+                La empresa y su comunidad de distribuidores trabajan alineados en promover hábitos saludables y desarrollo empresarial sostenible.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         6. SECCIÓN DE PRODUCTOS
+         6. SECCIÓN DE PRODUCTOS + DXN "ELEVATE YOUR LIFESTYLE" CATEGORY TABS
          ====================================================================== -->
     <section class="section section--light" id="productos">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-eyebrow">Portafolio Oficial</span>
+          <span class="section-eyebrow">Portafolio Oficial · Top Functional Series</span>
           <h2 class="section-title">Descubre nuestro portafolio de bienestar</h2>
           <p class="section-lead">
-            Fórmulas funcionales en polvo con ingredientes naturales y superalimentos seleccionados para complementar tu nutrición y rutina diaria.
+            Eleva tu estilo de vida con nuestras fórmulas en polvo elaboradas con materias primas naturales, hongos funcionales y superalimentos.
           </p>
+        </div>
+
+        <!-- DXN-Inspired Lifestyle Benefit Tabs -->
+        <div class="dxn-category-tabs reveal" role="tablist" aria-label="Filtrar portafolio por beneficio de estilo de vida">
+          <button type="button" class="dxn-category-tab is-active" data-portfolio-filter="all">Todos los Productos (4)</button>
+          <button type="button" class="dxn-category-tab" data-portfolio-filter="nutricion">Nutrición Diaria &amp; Equilibrio</button>
+          <button type="button" class="dxn-category-tab" data-portfolio-filter="cafe-ganoderma">Café Gourmet &amp; Ganoderma</button>
+          <button type="button" class="dxn-category-tab" data-portfolio-filter="digestivo">Digestión &amp; Ligereza</button>
+          <button type="button" class="dxn-category-tab" data-portfolio-filter="vitalidad">Vitalidad &amp; Energía</button>
         </div>
 
         <div class="portfolio-grid">
           <!-- Producto 1: Micafé -->
-          <article class="product-card reveal">
+          <article class="product-card reveal" data-categories="all nutricion cafe-ganoderma">
             <div class="product-card__stage">
               <span class="product-card__badge">Equilibrio Perfecto</span>
               <img src="assets/mockup_micafe_bolsa.png" alt="Micafé Nexsus Global" class="product-card__img" />
@@ -246,7 +322,7 @@
           </article>
 
           <!-- Producto 2: Minegro -->
-          <article class="product-card reveal">
+          <article class="product-card reveal" data-categories="all cafe-ganoderma vitalidad">
             <div class="product-card__stage">
               <span class="product-card__badge">Bienestar Intenso</span>
               <img src="assets/mockup_minegro_bolsa.png" alt="Minegro Nexsus Global" class="product-card__img" />
@@ -279,7 +355,7 @@
           </article>
 
           <!-- Producto 3: Lanzate -->
-          <article class="product-card reveal">
+          <article class="product-card reveal" data-categories="all digestivo nutricion">
             <div class="product-card__stage">
               <span class="product-card__badge">Formulación Avanzada</span>
               <img src="assets/mockup_lanzate_bolsa.png" alt="Lanzate Nexsus Global" class="product-card__img" />
@@ -312,7 +388,7 @@
           </article>
 
           <!-- Producto 4: Alokate -->
-          <article class="product-card reveal">
+          <article class="product-card reveal" data-categories="all vitalidad nutricion">
             <div class="product-card__stage">
               <span class="product-card__badge">Energizante Vital</span>
               <img src="assets/mockup_alokate_bolsa.png" alt="Alokate Nexsus Global" class="product-card__img" />
@@ -348,9 +424,60 @@
     </section>
 
     <!-- ======================================================================
+         DXN-INSPIRED SECTION: EXCELENCIA EN GANODERMA Y SUPERALIMENTOS
+         ====================================================================== -->
+    <section class="section" id="calidad-botanica">
+      <div class="container botanical-showcase">
+        <div class="botanical-visual reveal">
+          <img src="assets/natural-ingredients.jpg" alt="Materias primas naturales: Ganoderma, Chaga, Cacao, Maca Negra y Café" />
+        </div>
+
+        <div class="reveal">
+          <span class="section-eyebrow">100% Materias Primas Naturales</span>
+          <h2 class="section-title">La ciencia detrás de nuestras fórmulas funcionales.</h2>
+          <p class="section-lead">
+            Al igual que las grandes compañías globales de bienestar basadas en Ganoderma y superalimentos, en Nexsus Global seleccionamos ingredientes botánicos de alta pureza para cada sachet.
+          </p>
+
+          <div class="botanical-steps">
+            <div class="botanical-step-card">
+              <span class="botanical-step-card__num">ETAPA 01</span>
+              <div>
+                <h3 class="botanical-step-card__title">Hongos Funcionales (Ganoderma &amp; Chaga)</h3>
+                <p class="botanical-step-card__desc">
+                  Presentes en Micafé, Minegro y Lanzate para acompañar el equilibrio y bienestar diario en cada taza.
+                </p>
+              </div>
+            </div>
+
+            <div class="botanical-step-card">
+              <span class="botanical-step-card__num">ETAPA 02</span>
+              <div>
+                <h3 class="botanical-step-card__title">Superalimentos Andinos y Amazónicos</h3>
+                <p class="botanical-step-card__desc">
+                  Maca negra, camu camu, sacha inchi, yacón, cacao, algarrobo y uña de gato procesados cuidadosamente para conservar su valor nutricional.
+                </p>
+              </div>
+            </div>
+
+            <div class="botanical-step-card">
+              <span class="botanical-step-card__num">ETAPA 03</span>
+              <div>
+                <h3 class="botanical-step-card__title">Dosificación Práctica en Sachets</h3>
+                <p class="botanical-step-card__desc">
+                  Empaque sellado de alta protección con 30 sachets individuales listos para preparar y compartir en cualquier lugar.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
          7. SECCIÓN DE OPORTUNIDAD & CÓMO FUNCIONA (Horizontal Timeline)
          ====================================================================== -->
-    <section class="section" id="oportunidad">
+    <section class="section section--light" id="oportunidad">
       <div class="container" id="como-funciona">
         <div class="section-header reveal">
           <span class="section-eyebrow">Oportunidad &amp; Cómo Funciona</span>
@@ -412,27 +539,34 @@
     </section>
 
     <!-- ======================================================================
-         8. SECCIÓN "LIBERTAD Y ESTILO DE VIDA"
+         8. SECCIÓN "LIBERTAD Y ESTILO DE VIDA" + DXN "WHY CHOOSE US" TABS
          ====================================================================== -->
-    <section class="section section--light" id="estilo-de-vida">
+    <section class="section" id="estilo-de-vida">
       <div class="container lifestyle-split">
         <div class="lifestyle-visual reveal">
           <img src="assets/freedom-lifestyle.jpg" alt="Pareja disfrutando de tiempo libre, naturaleza y trabajo remoto con tranquilidad" />
         </div>
 
         <div class="reveal">
-          <span class="section-eyebrow">Libertad y Estilo de Vida</span>
+          <span class="section-eyebrow">Libertad y Estilo de Vida · ¿Por Qué Elegirnos?</span>
           <h2 class="section-title">Diseña una vida con más posibilidades.</h2>
           <p class="section-lead">
             El verdadero crecimiento no se trata solamente de números. Se trata de crear nuevas posibilidades, desarrollar habilidades y construir un estilo de vida alineado con tus objetivos.
           </p>
 
-          <div class="lifestyle-tags">
-            <span class="lifestyle-tag">Viajes y Experiencias</span>
-            <span class="lifestyle-tag">Tiempo Libre</span>
-            <span class="lifestyle-tag">Gestión Flexible</span>
-            <span class="lifestyle-tag">Bienestar Integral</span>
-            <span class="lifestyle-tag">Crecimiento Personal</span>
+          <!-- DXN-Inspired "Why Choose Us" Interactive Tabs -->
+          <div class="why-choose-tabs" role="tablist" aria-label="Razones para elegir Nexsus Global">
+            <button type="button" class="why-tab-btn is-active" data-why-tab="plan">Plan e Incentivos</button>
+            <button type="button" class="why-tab-btn" data-why-tab="viajes">Experiencias y Viajes</button>
+            <button type="button" class="why-tab-btn" data-why-tab="portafolio">Valor del Producto</button>
+            <button type="button" class="why-tab-btn" data-why-tab="vision">Visión a Largo Plazo</button>
+          </div>
+
+          <div class="why-tab-panel" id="why-tab-panel">
+            <h3 class="why-tab-panel__title" id="why-panel-title">Modelo Flexible de Comercialización y Red</h3>
+            <p class="why-tab-panel__desc" id="why-panel-desc">
+              Un sistema estructurado que combina distribución directa, programas de activación y bonificaciones por desarrollo de organización con total transparencia.
+            </p>
           </div>
 
           <a href="https://script.google.com/macros/s/AKfycbyKQmy-3FAl-aAdOq3PwcniAxawuE8Kd0UhJ6D15NTQVPJrI7gHexleEPMo_BDPdRr1nQ/exec" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg" id="lifestyle-cta-btn">
@@ -446,7 +580,7 @@
     <!-- ======================================================================
          9. SECCIÓN DE BENEFICIOS
          ====================================================================== -->
-    <section class="section" id="beneficios">
+    <section class="section section--light" id="beneficios">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-eyebrow">Ecosistema de Valor</span>
@@ -520,12 +654,12 @@
     </section>
 
     <!-- ======================================================================
-         10. SECCIÓN OFICINA VIRTUAL
+         10. SECCIÓN OFICINA VIRTUAL (Nexsus eWorld Platform)
          ====================================================================== -->
     <section class="section section--dark" id="oficina-virtual">
       <div class="container virtual-office-layout">
         <div class="reveal">
-          <span class="section-eyebrow">Tecnología &amp; Gestión SaaS</span>
+          <span class="section-eyebrow">Nexsus eWorld · Tecnología &amp; Gestión SaaS</span>
           <h2 class="section-title">Todo tu negocio en un solo lugar.</h2>
           <p class="section-lead">
             Gestiona tu actividad, consulta información y administra tu negocio desde nuestra Oficina Virtual.
@@ -554,10 +688,10 @@
             <div class="saas-mockup__dots">
               <span></span><span></span><span></span>
             </div>
-            <span class="saas-mockup__url">portal.nexsusglobal.com / oficina-virtual</span>
+            <span class="saas-mockup__url">eworld.nexsusglobal.com / oficina-virtual</span>
             <span class="saas-mockup__status">
               <span style="width:7px; height:7px; border-radius:50%; background:#34D399;"></span>
-              Conectado
+              En Línea
             </span>
           </div>
 
@@ -622,12 +756,36 @@
     </section>
 
     <!-- ======================================================================
+         DXN-INSPIRED LIVE DIGIT COUNTER ("WE ARE NOW...")
+         ====================================================================== -->
+    <section class="dxn-counter-band" aria-label="Contador oficial de comunidad Nexsus Global">
+      <div class="container reveal">
+        <span class="section-eyebrow">Expansión Continua · Un Mundo, Un Mercado</span>
+        <h2 style="font-family:var(--font-display); font-size:1.35rem; font-weight:700; color:var(--text-inverse);">
+          COMUNIDAD Y SACHETS DE BIENESTAR COMPARTIDOS
+        </h2>
+        <div class="digit-tiles" aria-label="1,485,920">
+          <span class="digit-tile">1</span>
+          <span class="digit-tile">4</span>
+          <span class="digit-tile">8</span>
+          <span class="digit-tile">5</span>
+          <span class="digit-tile">9</span>
+          <span class="digit-tile">2</span>
+          <span class="digit-tile digit-tile--accent">0</span>
+        </div>
+        <p style="font-size:0.875rem; color:var(--text-inverse-muted); max-width:560px; margin:0 auto;">
+          Construyendo juntos una red sólida enfocada en bienestar, liderazgo y desarrollo empresarial desde Perú hacia el mundo.
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================================================================
          11. TESTIMONIOS ("Historias de nuestra comunidad" — Demostrativo Editable)
          ====================================================================== -->
     <section class="section" id="testimonios">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-eyebrow">Comunidad Nexsus</span>
+          <span class="section-eyebrow">Liderazgo &amp; Comunidad Nexsus</span>
           <h2 class="section-title">Historias de nuestra comunidad</h2>
           <p class="section-lead">
             Experiencias enfocadas en bienestar, aprendizaje continuo y desarrollo dentro de nuestra red empresarial.
@@ -641,9 +799,12 @@
         <div class="testimonials-grid">
           <!-- Testimonio Demostrativo 1 -->
           <article class="testimonial-card reveal">
-            <p class="testimonial-card__quote">
-              "[Espacio editable para testimonio] — Integrar los productos de Nexsus Global en mi rutina diaria y contar con herramientas digitales claras me ha permitido emprender de manera organizada y profesional."
-            </p>
+            <div>
+              <span class="testimonial-card__badge">Perú · Liderazgo Comunitario</span>
+              <p class="testimonial-card__quote">
+                "[Espacio editable para testimonio] — Integrar los productos de Nexsus Global en mi rutina diaria y contar con herramientas digitales claras me ha permitido emprender de manera organizada y profesional."
+              </p>
+            </div>
             <div class="testimonial-card__person">
               <img src="assets/testimonial-1.jpg" alt="Miembro de la comunidad Nexsus Global" class="testimonial-card__avatar" />
               <div>
@@ -655,9 +816,12 @@
 
           <!-- Testimonio Demostrativo 2 -->
           <article class="testimonial-card reveal">
-            <p class="testimonial-card__quote">
-              "[Espacio editable para testimonio] — Lo que más valoro de Nexsus Global es la formación comercial y el enfoque genuino en el bienestar. La Oficina Virtual facilita todo el seguimiento de mi organización."
-            </p>
+            <div>
+              <span class="testimonial-card__badge">Perú · Desarrollo Empresarial</span>
+              <p class="testimonial-card__quote">
+                "[Espacio editable para testimonio] — Lo que más valoro de Nexsus Global es la formación comercial y el enfoque genuino en el bienestar. La Oficina Virtual facilita todo el seguimiento de mi organización."
+              </p>
+            </div>
             <div class="testimonial-card__person">
               <img src="assets/testimonial-2.jpg" alt="Emprendedor de la comunidad Nexsus Global" class="testimonial-card__avatar" />
               <div>
@@ -669,9 +833,12 @@
 
           <!-- Testimonio Demostrativo 3 -->
           <article class="testimonial-card reveal">
-            <p class="testimonial-card__quote">
-              "[Espacio editable para testimonio] — Compartir Micafé y Alokate con mi entorno ha sido una experiencia muy natural. Aquí encontré una comunidad que impulsa el crecimiento personal paso a paso."
-            </p>
+            <div>
+              <span class="testimonial-card__badge">Perú · Bienestar y Red</span>
+              <p class="testimonial-card__quote">
+                "[Espacio editable para testimonio] — Compartir Micafé y Alokate con mi entorno ha sido una experiencia muy natural. Aquí encontré una comunidad que impulsa el crecimiento personal paso a paso."
+              </p>
+            </div>
             <div class="testimonial-card__person">
               <img src="assets/testimonial-3.jpg" alt="Integrante de la comunidad Nexsus Global" class="testimonial-card__avatar" />
               <div>
@@ -685,9 +852,62 @@
     </section>
 
     <!-- ======================================================================
+         DXN PHILIPPINES-INSPIRED SECTION: CENTROS DE ATENCIÓN Y EXPANSIÓN REGIONAL
+         ====================================================================== -->
+    <section class="section section--light" id="presencia-regional">
+      <div class="container branches-layout">
+        <div class="reveal">
+          <span class="section-eyebrow">Presencia Corporativa &amp; Centros de Servicio</span>
+          <h2 class="section-title">Cerca de nuestra comunidad en cada región.</h2>
+          <p class="section-lead">
+            Siguiendo el modelo internacional de centros de soporte y distribución regional, acompañamos a nuestros distribuidores con atención directa, logística nacional y soporte digital permanente.
+          </p>
+
+          <div class="branches-grid">
+            <div class="branch-card">
+              <div>
+                <h3 class="branch-card__city">Sede Central · Lima</h3>
+                <p class="branch-card__detail">Centro Corporativo &amp; Atención a Distribuidores (Editable)</p>
+              </div>
+              <span class="branch-card__hours">Lun - Sáb · 9:00 - 18:00</span>
+            </div>
+
+            <div class="branch-card">
+              <div>
+                <h3 class="branch-card__city">Hub Norte · Trujillo &amp; Piura</h3>
+                <p class="branch-card__detail">Red de Distribución y Capacitación Regional</p>
+              </div>
+              <span class="branch-card__hours">Lun - Sáb · 9:00 - 18:00</span>
+            </div>
+
+            <div class="branch-card">
+              <div>
+                <h3 class="branch-card__city">Hub Sur · Arequipa &amp; Cusco</h3>
+                <p class="branch-card__detail">Red de Distribución y Capacitación Regional</p>
+              </div>
+              <span class="branch-card__hours">Lun - Sáb · 9:00 - 18:00</span>
+            </div>
+
+            <div class="branch-card">
+              <div>
+                <h3 class="branch-card__city">Canal Digital · Nexsus eWorld</h3>
+                <p class="branch-card__detail">Afiliaciones, Pedidos y Despachos a Nivel Nacional</p>
+              </div>
+              <span class="branch-card__hours">Disponible 24/7</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="botanical-visual reveal">
+          <img src="assets/corporate-center.jpg" alt="Sede corporativa y centro de negocios Nexsus Global en Perú" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
          12. SECCIÓN FAQ (Preguntas Frecuentes — Acordeón)
          ====================================================================== -->
-    <section class="section section--light" id="preguntas-frecuentes">
+    <section class="section" id="preguntas-frecuentes">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-eyebrow">Transparencia y Claridad</span>
@@ -706,7 +926,7 @@
             </button>
             <div class="faq-answer" style="max-height: 220px;">
               <div class="faq-answer__inner">
-                Nexsus Global es una empresa dedicada a la comercialización y distribución de productos orientados al bienestar, alimentos y bebidas funcionales, desarrollando una comunidad de distribuidores independientes apoyada en herramientas digitales modernas.
+                Nexsus Global es una empresa dedicada a la comercialización y distribución de productos orientados al bienestar, alimentos y bebidas funcionales, desarrollando una comunidad de distribuidores independientes apoyada en herramientas digitales modernas bajo la visión "Un Mundo, Un Mercado".
               </div>
             </div>
           </div>
@@ -840,7 +1060,7 @@
         <div>
           <img src="assets/logo-white.png" alt="Nexsus Global Logo" class="footer-brand__logo" />
           <p class="footer-brand__desc">
-            Empresa dedicada a la distribución de productos de bienestar y desarrollo de una comunidad de emprendedores mediante herramientas digitales modernas.
+            Empresa dedicada a la distribución de productos de bienestar y desarrollo de una comunidad de emprendedores mediante herramientas digitales modernas bajo la visión Un Mundo, Un Mercado.
           </p>
           <div class="footer-socials" aria-label="Redes sociales editables">
             <a href="#contacto" class="footer-social-link" aria-label="Instagram Nexsus Global">
@@ -918,7 +1138,7 @@
 
       <div class="footer-bottom">
         <span>&copy; 2026 Nexsus Global. Todos los derechos reservados.</span>
-        <span>Bienestar · Comunidad · Oportunidad de Emprendimiento</span>
+        <span>Un Mundo, Un Mercado · Bienestar · Comunidad · Oportunidad</span>
       </div>
     </div>
   </footer>

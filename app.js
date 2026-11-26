@@ -1,12 +1,58 @@
 /**
- * NEXSUS GLOBAL — Official Corporate Web Application Logic
+ * NEXSUS GLOBAL — Official Corporate Web Application Logic (v3: DXN "One World One Market" Structure)
  * Controls:
  * 1. Sticky Navbar scroll state & Mobile hamburger drawer
- * 2. Product Portfolio modal ("Conocer producto")
- * 3. Oficina Virtual interactive SaaS mockup tabs (Dashboard, Volumen, Activaciones, Comisiones, Organización, Historial, Billetera, Perfil)
- * 4. FAQ Accordion transitions
- * 5. Progressive Scroll Reveal animations
+ * 2. DXN-Inspired 3-Slide Interactive Hero Switcher
+ * 3. DXN-Inspired Lifestyle Benefit Product Filter Tabs
+ * 4. Product Portfolio modal ("Conocer producto")
+ * 5. DXN-Inspired "Why Choose Us" Interactive Tabs
+ * 6. Oficina Virtual (Nexsus eWorld) interactive SaaS mockup tabs (8 modules)
+ * 7. FAQ Accordion transitions
+ * 8. Progressive Scroll Reveal animations
  */
+
+const HERO_SLIDES = [
+  {
+    subtitle: 'Conecta con una comunidad global, descubre productos de bienestar y desarrolla una nueva forma de emprender.',
+    image: 'assets/hero-lifestyle.jpg',
+    alt: 'Comunidad de emprendedores Nexsus Global colaborando en un entorno moderno',
+    floatTitle: 'Ecosistema Corporativo Nexsus',
+    floatDesc: 'Bienestar, formación y tecnología bajo la visión Un Mundo, Un Mercado'
+  },
+  {
+    subtitle: 'Forma parte de una organización conectada mediante un único código digital en nuestra plataforma Nexsus eWorld, con soporte y expansión desde Perú.',
+    image: 'assets/corporate-center.jpg',
+    alt: 'Sede corporativa y centro de atención a distribuidores Nexsus Global',
+    floatTitle: 'Red Comercial en Expansión',
+    floatDesc: 'Centros de atención, logística nacional y Oficina Virtual disponible 24/7'
+  },
+  {
+    subtitle: 'Fórmulas funcionales en polvo con hongos adaptógenos (Ganoderma y Chaga) y superalimentos peruanos de alta pureza para tu nutrición diaria.',
+    image: 'assets/natural-ingredients.jpg',
+    alt: 'Materias primas naturales: Ganoderma, Chaga, Cacao, Maca Negra y Café',
+    floatTitle: '100% Materias Primas Naturales',
+    floatDesc: 'Micafé, Minegro, Lanzate y Alokate en prácticos sachets individuales'
+  }
+];
+
+const WHY_CHOOSE_TABS = {
+  plan: {
+    title: 'Modelo Flexible de Comercialización y Red',
+    desc: 'Un sistema estructurado que combina distribución directa, programas de activación y bonificaciones por desarrollo de organización con total transparencia.'
+  },
+  viajes: {
+    title: 'Experiencias, Eventos y Convivencias de Liderazgo',
+    desc: 'Reconocemos la constancia y el liderazgo mediante encuentros corporativos, seminarios de formación y experiencias diseñadas para nuestra comunidad.'
+  },
+  portafolio: {
+    title: 'Productos Funcionales de Consumo Diario',
+    desc: 'Fórmulas de alta rotación elaboradas con Ganoderma, Chaga, Maca Negra, Camu Camu, Cacao y Sacha Inchi que se integran naturalmente en cada hogar.'
+  },
+  vision: {
+    title: 'Construcción Patrimonial y Desarrollo Sostenible',
+    desc: 'Desarrolla habilidades empresariales reales respaldadas por nuestro ecosistema digital Nexsus eWorld para construir una organización sólida a largo plazo.'
+  }
+};
 
 const PORTFOLIO_PRODUCTS = {
   micafe: {
@@ -159,7 +205,7 @@ const OFFICE_MODULES = {
     kpis: [
       { label: 'Código Nexsus', val: 'NX-PE-0842' },
       { label: 'País Base', val: 'Perú' },
-      { label: 'Nivel deAcceso', val: 'Distribuidor' },
+      { label: 'Membresía', val: 'Un Mundo' },
       { label: 'Seguridad 2FA', val: 'Activa' }
     ],
     rows: [
@@ -172,7 +218,10 @@ const OFFICE_MODULES = {
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
+  initHeroSlides();
+  initPortfolioFilterTabs();
   initProductModal();
+  initWhyChooseTabs();
   initVirtualOfficeMockup();
   initFaqAccordion();
   initScrollReveal();
@@ -210,7 +259,66 @@ function initNavbar() {
 }
 
 /* --------------------------------------------------------------------------
-   2. Product Modal ("Conocer producto")
+   2. DXN-Inspired 3-Slide Hero Switcher
+   -------------------------------------------------------------------------- */
+function initHeroSlides() {
+  const tabs = document.querySelectorAll('[data-hero-slide]');
+  const subtitleEl = document.getElementById('hero-dynamic-subtitle');
+  const imgEl = document.getElementById('hero-stage-image');
+  const floatTitleEl = document.getElementById('hero-float-title');
+  const floatDescEl = document.getElementById('hero-float-desc');
+
+  if (!tabs.length || !imgEl) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const idx = parseInt(tab.getAttribute('data-hero-slide'), 10);
+      const slide = HERO_SLIDES[idx];
+      if (!slide) return;
+
+      tabs.forEach(t => t.classList.remove('is-active'));
+      tab.classList.add('is-active');
+
+      imgEl.style.opacity = '0.35';
+      setTimeout(() => {
+        subtitleEl.textContent = slide.subtitle;
+        imgEl.src = slide.image;
+        imgEl.alt = slide.alt;
+        floatTitleEl.textContent = slide.floatTitle;
+        floatDescEl.textContent = slide.floatDesc;
+        imgEl.style.opacity = '1';
+      }, 160);
+    });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   3. DXN-Inspired Lifestyle Benefit Product Filter Tabs
+   -------------------------------------------------------------------------- */
+function initPortfolioFilterTabs() {
+  const filterBtns = document.querySelectorAll('[data-portfolio-filter]');
+  const cards = document.querySelectorAll('.product-card[data-categories]');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.getAttribute('data-portfolio-filter');
+      filterBtns.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+
+      cards.forEach(card => {
+        const cats = card.getAttribute('data-categories').split(' ');
+        if (cats.includes(cat)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   4. Product Modal ("Conocer producto")
    -------------------------------------------------------------------------- */
 function initProductModal() {
   const backdrop = document.getElementById('product-modal-backdrop');
@@ -259,7 +367,30 @@ function initProductModal() {
 }
 
 /* --------------------------------------------------------------------------
-   3. Interactive Oficina Virtual Mockup
+   5. DXN-Inspired "Why Choose Us" Interactive Tabs
+   -------------------------------------------------------------------------- */
+function initWhyChooseTabs() {
+  const btns = document.querySelectorAll('[data-why-tab]');
+  const titleEl = document.getElementById('why-panel-title');
+  const descEl = document.getElementById('why-panel-desc');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.getAttribute('data-why-tab');
+      const info = WHY_CHOOSE_TABS[key];
+      if (!info) return;
+
+      btns.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+
+      titleEl.textContent = info.title;
+      descEl.textContent = info.desc;
+    });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   6. Interactive Oficina Virtual Mockup
    -------------------------------------------------------------------------- */
 function initVirtualOfficeMockup() {
   const triggers = document.querySelectorAll('[data-office-tab]');
@@ -304,7 +435,7 @@ function initVirtualOfficeMockup() {
 }
 
 /* --------------------------------------------------------------------------
-   4. FAQ Accordion
+   7. FAQ Accordion
    -------------------------------------------------------------------------- */
 function initFaqAccordion() {
   const items = document.querySelectorAll('.faq-item');
@@ -332,7 +463,7 @@ function initFaqAccordion() {
 }
 
 /* --------------------------------------------------------------------------
-   5. Progressive Scroll Reveal
+   8. Progressive Scroll Reveal
    -------------------------------------------------------------------------- */
 function initScrollReveal() {
   const elements = document.querySelectorAll('.reveal');
